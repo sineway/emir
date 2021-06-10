@@ -43,7 +43,7 @@ export class Gateway {
         let data = await this.get(`/v1/market/user-badges:${ userName }.json`);
         return data["user-badges"];
     }
-    /*
+    /**
         @param {Number} itemId
         @returns {Promise<Object>} https://build.envato.com/api/#market_0_getCatalogItem
     */
