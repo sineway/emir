@@ -27,17 +27,33 @@ export class Gateway {
         }
         return json;
     }
+    /**
+        @param {String} siteName
+        @returns {Promise<Object>} https://build.envato.com/api#market_getPopular
+    */
+    async getPopular(siteName) {
+        let data = await this.get(`/v1/market/popular:${ siteName }.json`);
+        return data.popular;
+    }
+    /**
+        @param {String} userName
+        @returns {Promise<Array>} https://build.envato.com/api#market_getUserBadges
+    */
+    async getUserBadges(userName) {
+        let data = await this.get(`/v1/market/user-badges:${ userName }.json`);
+        return data["user-badges"];
+    }
     /*
         @param {Number} itemId
         @returns {Promise<Object>} https://build.envato.com/api/#market_0_getCatalogItem
     */
-    async getItem(itemId) {
+    async getCatalogItem(itemId) {
         let item = await this.get(`/v3/market/catalog/item?id=${ itemId }`);
 
-        // Add <last_week_sales> and <last_three_months_sales>
+        // Aggregate <last_week_sales> and <last_three_months_sales>
 
         let [siteName] = item.site.split(".");
-        let { popular } = await this.get(`/v1/market/popular:${ siteName }.json`);
+        let popular = await this.getPopular(siteName);
         [
             "items_last_week",
             "items_last_three_months"
@@ -47,10 +63,10 @@ export class Gateway {
             item[salesKey] = popItem ? Number(popItem.sales) : null;
         });
 
-        // Add <exclusive> flag
+        // Aggregate <exclusive>
 
-        let data = await this.get(`/v1/market/user-badges:${ item.author_username }.json`);
-        item.exclusive = data["user-badges"].some(badge => badge.name == "exclusive");
+        let badges = await this.getUserBadges(item.author_username);
+        item.exclusive = badges.some(badge => badge.name == "exclusive");
 
         return item;
     }
