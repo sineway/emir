@@ -21,11 +21,11 @@
         "default_popup": "popup.html",
         "default_icon": "images/icons8-estimate-500.png"
     },
-    "minimum_chrome_version": "76.0",
+    "minimum_chrome_version": "80.0",
     "applications": {
         "gecko": {
             "id": "envato-estimate@sineway",
-            "strict_min_version": "68.0"
+            "strict_min_version": "72.0"
         }
     }
 }
