@@ -50,7 +50,7 @@ export class Gateway {
     async getCatalogItem(itemId) {
         let item = await this.get(`/v3/market/catalog/item?id=${ itemId }`);
 
-        // Aggregate <last_week_sales> and <last_three_months_sales>
+        // Aggregate <last_week> and <last_three_months> data.
 
         let [siteName] = item.site.split(".");
         let popular = await this.getPopular(siteName);
@@ -58,16 +58,13 @@ export class Gateway {
             "items_last_week",
             "items_last_three_months"
         ].forEach(key => {
-            let popItem = popular[key].find(popItem => item.id == popItem.id);
-            let salesKey = key.replace("items_", "") + "_sales";
-            item[salesKey] = popItem ? Number(popItem.sales) : null;
+            let newKey = key.replace("items_", "");
+            item[newKey] = popular[key].find(popItem => popItem.id == item.id);
         });
 
-        // Aggregate <exclusive>
+        // Aggregate <author_badges>
 
-        let badges = await this.getUserBadges(item.author_username);
-        item.exclusive = badges.some(badge => badge.name == "exclusive");
-
+        item.author_badges = await this.getUserBadges(item.author_username);
         return item;
     }
 }

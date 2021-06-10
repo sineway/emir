@@ -39,9 +39,9 @@ describe("Gateway", () => {
             ).toEqual(
                 jasmine.objectContaining({
                     id: itemId,
-                    last_week_sales: jasmine.any(Number),
-                    last_three_months_sales: jasmine.any(Number),
-                    exclusive: jasmine.any(Boolean)
+                    last_week: jasmine.any(Object),
+                    last_three_months: jasmine.any(Object),
+                    author_badges: jasmine.any(Array)
                 })
             );
         });
