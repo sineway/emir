@@ -1,8 +1,8 @@
-import Gateway from "/api/Gateway.js";
+import MarketGateway from "/api/MarketGateway.js";
 
-describe("Gateway", () => {
+xdescribe("MarketGateway", () => {
 
-    let gateway = new Gateway({
+    let gateway = new MarketGateway({
         apiToken: localStorage.apiToken
     });
 

@@ -1,8 +1,8 @@
 /**
-    @class Gateway
+    @class MarketGateway
     @param {Object} properties
 */
-export class Gateway {
+export class MarketGateway {
     constructor(properties) {
         /**
             @type {String}
@@ -68,4 +68,4 @@ export class Gateway {
         return item;
     }
 }
-export default Gateway;
+export default MarketGateway;
