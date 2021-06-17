@@ -2,7 +2,7 @@ import TimeUnit from "/api/TimeUnit.js";
 
 describe("TimeUnit", () => {
 
-    it("has static keys", () => {
+    it("has static fields", () => {
         expect(
             Object.entries(TimeUnit)
         ).toEqual([
@@ -18,7 +18,7 @@ describe("TimeUnit", () => {
 
     describe("measure()", () => {
 
-        it("finds a key whose value is close to a provided value", () => {
+        it("returns a time unit identifier for a value", () => {
             expect(
                 TimeUnit.measure(24 * TimeUnit.HOUR)
             ).toBe(
@@ -26,7 +26,7 @@ describe("TimeUnit", () => {
             );
         });
 
-        it("finds a key whose value is close to a provided value with a minus sign", () => {
+        it("returns a time unit identifier for a negative value", () => {
             expect(
                 TimeUnit.measure(-24 * TimeUnit.HOUR)
             ).toBe(

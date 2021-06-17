@@ -8,7 +8,7 @@ xdescribe("MarketGateway", () => {
 
     describe("#getPopular()", () => {
 
-        it("resolves to a popular items/authors data", async () => {
+        it("resolves to a popular items/authors", async () => {
             expect(
                 await gateway.getPopular("themeforest")
             ).toEqual({
