@@ -12,7 +12,7 @@ export class OptionsRenderer extends BaseRenderer {
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             chrome.storage.sync.set(Object.fromEntries(new FormData(event.target)), () => {
-                location.href = chrome.runtime.getURL("pages/popup.html");
+                location.href = chrome.runtime.getURL("/popup.html");
             });
         });
         const anyInvalid = form.querySelector(":invalid");

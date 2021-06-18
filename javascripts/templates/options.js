@@ -8,7 +8,7 @@ import {arrowLeft} from "./icons.js";
 export const options = (data) => html`
     <div class="banner">
         <div class="banner__margin">
-            <a class="button" href="/pages/popup.html" aria-label="Estimate">
+            <a class="button" href="/popup.html" aria-label="Estimate">
                 ${arrowLeft()}
             </a>
         </div>
