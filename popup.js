@@ -1,5 +1,5 @@
-import {PopupRenderer} from "./renderers/popup.js";
-import {PresentableItem} from "./models/presentable-item.js";
+import {PopupRenderer} from "/javascripts/renderers/popup.js";
+import {PresentableItem} from "/javascripts/models/presentable-item.js";
 
 const renderer = new PopupRenderer();
 renderer.renderProgress();
