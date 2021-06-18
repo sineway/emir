@@ -1,9 +1,9 @@
 /**
     @class MarketGateway
-    @param {Object} properties
+    @param {Object=} properties
 */
 export class MarketGateway {
-    constructor(properties) {
+    constructor(properties = {}) {
         /**
             @type {String}
         */
