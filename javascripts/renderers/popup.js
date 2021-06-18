@@ -8,7 +8,7 @@ export class PopupRenderer extends BaseRenderer {
     */
     renderFailure(error) {
         if (/^(401|403)$/.test(error.status) && (history.length === 1)) {
-            location.href = chrome.runtime.getURL("pages/options.html");
+            location.href = chrome.runtime.getURL("/options.html");
         }
         super.renderFailure(error);
     }

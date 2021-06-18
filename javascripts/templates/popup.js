@@ -17,7 +17,7 @@ export const popup = (item, averageEntries = [
 ]) => html`
     <div class="banner">
         <div class="banner__margin">
-            <a class="button" href="/pages/options.html" aria-label="Settings">
+            <a class="button" href="/options.html" aria-label="Settings">
                 ${menu()}
             </a>
         </div>
