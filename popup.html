@@ -19,4 +19,57 @@
         <!-- Popup script -->
         <script type="module" src="/popup.js"></script>
     </head>
+    <body>
+        <div class="banner" id="placeholder">
+            <div class="banner__margin">
+                <img src="/icons/loader.svg" class="icon">
+            </div>
+            <div class="banner__content">
+                <h1 class="banner__title"> Loading… </h1>
+            </div>
+        </div>
+        <template>
+            <div class="banner">
+                <div class="banner__margin">
+                    <a class="button" href="/options.html" aria-label="Settings">
+                        <img src="/icons/menu.svg" class="icon">
+                    </a>
+                </div>
+                <div class="banner__content">
+                    <span class="banner__overline"> No updates </span>
+                    <h1 class="banner__title"> Undefined </h1>
+                    <span class="banner__sticker"> 0 </span>
+                </div>
+            </div>
+            <div class="table" role="table">
+                <div class="table__row table__row--primary" role="row">
+                    <span class="table__cell" role="cell"> Period </span>
+                    <span class="table__cell" role="cell"> Sales </span>
+                    <span class="table__cell" role="cell"> Revenue </span>
+                    <span class="table__cell" role="cell"> Profit </span>
+                </div>
+                <template id="row-template">
+                    <div class="table__row table__row--secondary" role="row">
+                        <span class="table__cell" role="cell"> Undefined </span>
+                        <span class="table__cell" role="cell"> 0 </span>
+                        <span class="table__cell" role="cell"> 0 </span>
+                        <span class="table__cell" role="cell"> 0 </span>
+                        <button class="button disclosure-button table__disclosure-button" aria-controls="average" aria-expanded="false" aria-label="">
+                            <img src="/icons/chevron-down.svg" class="icon icon--small">
+                        </button>
+                    </div>
+                    <div class="table__rowgroup" role="rowgroup" id="average">
+                        <template id="rowgroup-row-template">
+                            <div class="table__row table__row--tertiary" role="row">
+                                <span class="table__cell" role="cell"> Undefined </span>
+                                <span class="table__cell" role="cell"> 0 </span>
+                                <span class="table__cell" role="cell"> 0 </span>
+                                <span class="table__cell" role="cell"> 0 </span>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </body>
 </html>
