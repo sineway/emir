@@ -38,10 +38,7 @@ xdescribe("MarketGateway", () => {
                 await gateway.getCatalogItem(itemId)
             ).toEqual(
                 jasmine.objectContaining({
-                    id: itemId,
-                    last_week: jasmine.any(Object),
-                    last_three_months: jasmine.any(Object),
-                    author_badges: jasmine.any(Array)
+                    id: itemId
                 })
             );
         });

@@ -48,24 +48,7 @@ export class MarketGateway {
         @returns {Promise<Object>} https://build.envato.com/api/#market_0_getCatalogItem
     */
     async getCatalogItem(itemId) {
-        let item = await this.get(`/v3/market/catalog/item?id=${ itemId }`);
-
-        // Aggregate <last_week> and <last_three_months> data.
-
-        let [siteName] = item.site.split(".");
-        let popular = await this.getPopular(siteName);
-        [
-            "items_last_week",
-            "items_last_three_months"
-        ].forEach(key => {
-            let newKey = key.replace("items_", "");
-            item[newKey] = popular[key].find(popItem => popItem.id == item.id);
-        });
-
-        // Aggregate <author_badges>
-
-        item.author_badges = await this.getUserBadges(item.author_username);
-        return item;
+        return this.get(`/v3/market/catalog/item?id=${ itemId }`);
     }
 }
 export default MarketGateway;
