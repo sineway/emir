@@ -1,4 +1,4 @@
-import {OptionsRenderer} from "./renderers/options.js";
+import {OptionsRenderer} from "/javascripts/renderers/options.js";
 
 const renderer = new OptionsRenderer();
 renderer.renderProgress();
