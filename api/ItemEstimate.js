@@ -7,20 +7,20 @@ import authorFees from "/api/data/author-fees.js";
 */
 export class ItemEstimate {
     constructor(properties) {
-        let [site] = properties.site.split(".");
-        let [category] = properties.category.split("/");
         /**
             @type {Number}
         */
-        this.buyerFee = buyerFees[`${ site }/${ category }`] ?? 0;
+        this.buyerFee = buyerFees[
+            `${ properties.site }/${ properties.category }`
+        ];
         /**
             @type {Boolean}
         */
-        this.exclusive = properties.exclusive ?? true;
+        this.exclusive = properties.exclusive;
         /**
             @type {Number}
         */
-        this.authorLevel = properties.authorLevel ?? 0;
+        this.authorLevel = properties.authorLevel;
         /**
             @type {Number}
         */

@@ -11,7 +11,9 @@ describe("ItemEstimate", () => {
             category: "misc",
             listPrice: 2,
             sales: 24,
-            age: TimeUnit.DAY
+            age: TimeUnit.DAY,
+            exclusive: true,
+            authorLevel: 0
         });
     });
 
