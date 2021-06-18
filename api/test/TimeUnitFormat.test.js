@@ -1,4 +1,4 @@
-import TimeUnitFormat from "/ui/TimeUnitFormat.js";
+import TimeUnitFormat from "/api/TimeUnitFormat.js";
 import TimeUnit from "/api/TimeUnit.js";
 
 describe("TimeUnitFormat", () => {
