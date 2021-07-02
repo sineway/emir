@@ -23,7 +23,7 @@ export class MarketGateway {
         });
         let json = await response.json();
         if (json.error) {
-            throw new Error(json.description);
+            throw new Error(json.description || json.error);
         }
         return json;
     }
