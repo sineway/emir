@@ -1,7 +1,0 @@
-.disclosure-button > .icon {
-    transition: transform var(--transition);
-}
-
-.disclosure-button[aria-expanded=true] > .icon {
-    transform: rotate(-180deg);
-}
