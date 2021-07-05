@@ -1,12 +1,12 @@
-import ItemEstimate from "/api/ItemEstimate.js";
+import ItemAudit from "/api/ItemAudit.js";
 import TimeUnit from "/api/TimeUnit.js";
 
-describe("ItemEstimate", () => {
+describe("ItemAudit", () => {
 
-    let estimate;
+    let audit;
 
     beforeEach(() => {
-        estimate = new ItemEstimate({
+        audit = new ItemAudit({
             site: "photodune",
             category: "misc",
             listPrice: 2,
@@ -21,7 +21,7 @@ describe("ItemEstimate", () => {
 
         it("updates tax, author fee, and profit", () => {
             expect(
-                estimate.withTaxRate(1)
+                audit.withTaxRate(1)
             ).toEqual(
                 jasmine.objectContaining({
                     tax: 1,
@@ -36,7 +36,7 @@ describe("ItemEstimate", () => {
 
         it("returns number of sales for a certain period of time", () => {
             expect(
-                estimate.salesFor(TimeUnit.HOUR)
+                audit.salesFor(TimeUnit.HOUR)
             ).toBe(
                 1
             );
@@ -47,7 +47,7 @@ describe("ItemEstimate", () => {
 
         it("returns revenue for a certain period of time", () => {
             expect(
-                estimate.revenueFor(TimeUnit.HOUR)
+                audit.revenueFor(TimeUnit.HOUR)
             ).toBe(
                 2
             );
@@ -58,7 +58,7 @@ describe("ItemEstimate", () => {
 
         it("returns profit for a certain period of time", () => {
             expect(
-                estimate.profitFor(TimeUnit.HOUR)
+                audit.profitFor(TimeUnit.HOUR)
             ).toBe(
                 .625
             );

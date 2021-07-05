@@ -2,10 +2,10 @@ import buyerFees from "/api/data/buyer-fees.js";
 import authorLevels from "/api/data/author-levels.js";
 import authorFees from "/api/data/author-fees.js";
 /**
-    @class ItemEstimate
+    @class ItemAudit
     @param {Object} properties
 */
-export class ItemEstimate {
+export class ItemAudit {
     constructor(properties) {
         /**
             @type {Number}
@@ -53,7 +53,7 @@ export class ItemEstimate {
     }
     /**
         @param {Number} taxRate
-        @returns {ItemEstimate}
+        @returns {ItemAudit}
     */
     withTaxRate(taxRate) {
         /**
@@ -96,4 +96,4 @@ export class ItemEstimate {
         return this.profit * this.salesFor(period);
     }
 }
-export default ItemEstimate;
+export default ItemAudit;
