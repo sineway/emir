@@ -1,7 +1,10 @@
 import MarketGateway from "/api/MarketGateway.js";
 
-xdescribe("MarketGateway", () => {
+describe("MarketGateway", () => {
 
+    if (!/^[A-Za-z0-9]{32}$/.test(localStorage.apiToken)) {
+        localStorage.apiToken = prompt("API token");
+    }
     let gateway = new MarketGateway({
         apiToken: localStorage.apiToken
     });

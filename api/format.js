@@ -1,4 +1,4 @@
-import TimeUnitFormat from "/ui/TimeUnitFormat.js";
+import TimeUnitFormat from "/api/TimeUnitFormat.js";
 
 let locale = "en-US";
 /**
@@ -18,17 +18,22 @@ export let relativeTimeFormat = new Intl.RelativeTimeFormat(locale, {
 /**
     @type {Intl.NumberFormat}
 */
-export let quantityFormat = new Intl.NumberFormat(locale, {
+export let compactNumberFormat = new Intl.NumberFormat(locale, {
     notation: "compact",
     compactDisplay: "short"
 });
 /**
     @type {Intl.NumberFormat}
 */
+export let numberFormat = new Intl.NumberFormat(locale, {
+    maximumFractionDigits: 3
+});
+/**
+    @type {Intl.NumberFormat}
+*/
 export let currencyFormat = new Intl.NumberFormat(locale, {
     style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0
+    currency: "USD"
 });
 /**
     @type {Intl.NumberFormat}

@@ -1,0 +1,87 @@
+{
+    "name": {
+        "message": "Envato Market Auditor"
+    },
+    "description": {
+        "message": "Find out what income a specific product is generating on Envato Market"
+    },
+    "version": {
+        "message": "Version $1"
+    },
+    "command": {
+        "message": "Audit…"
+    },
+    "startGreeting": {
+        "message": "Hey there"
+    },
+    "startInstruction": {
+        "message": "We are using Envato API. $linkStart$ Generate a personal token $linkEnd$ and paste it in the field below:",
+        "placeholders": {
+            "linkStart": {
+                "content": "<br> <a href=https://build.envato.com/create-token>"
+            },
+            "linkEnd": {
+                "content": "</a>"
+            }
+        }
+    },
+    "startConfirmation": {
+        "message": "Press <Enter> to confirm"
+    },
+    "report": {
+        "message": "Report"
+    },
+    "reportSummary": {
+        "message": "Summary"
+    },
+    "reportSummaryColumns": {
+        "message": "Price \\ Sales \\ Revenue"
+    },
+    "reportRevenueDiagram": {
+        "message": "Revenue diagram"
+    },
+    "reportRevenueDiagramLegend": {
+        "message": "Buyer fee \\ Withholding tax \\ Author fee \\ Earnings"
+    },
+    "reportAverage": {
+        "message": "Average"
+    },
+    "reportAverageColumns": {
+        "message": "Period \\ Sales \\ Revenue \\ Earnings"
+    },
+    "reportAverageRows": {
+        "message": "Hour \\ Day \\ Week \\ Month \\ Year"
+    },
+    "settings": {
+        "message": "Settings"
+    },
+    "settingsAppearance": {
+        "message": "Appearance"
+    },
+    "settingsAppearanceColorScheme": {
+        "message": "Color scheme \\ Preferred color scheme \\ Light \\ Dark"
+    },
+    "settingsAppearanceInterfaceScale": {
+        "message": "Interface scale \\ Preferred interface scale"
+    },
+    "settingsCalculations": {
+        "message": "Calculations"
+    },
+    "settingsCalculationsWithholdingTax": {
+        "message": "Withholding tax \\ Used as a fallback when it is impossible to determine the rate"
+    },
+    "settingsAuthentication": {
+        "message": "Authentication"
+    },
+    "settingsAuthenticationToken": {
+        "message": "API token \\ Required for requests to $api$ \\ $length$ characters…",
+        "placeholders": {
+            "api": {
+                "content": "api.envato.com"
+            },
+            "length": {
+                "content": "32"
+            }
+        }
+    }
+}

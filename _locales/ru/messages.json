@@ -1,0 +1,71 @@
+{
+    "name": {
+        "message": "Аудитор Envato Market"
+    },
+    "description": {
+        "message": "Узнавайте какой доход приносит конкретный товар на рынке Envato"
+    },
+    "version": {
+        "message": "Версия $1"
+    },
+    "command": {
+        "message": "Аудит…"
+    },
+    "startGreeting": {
+        "message": "Здравствуйте"
+    },
+    "startInstruction": {
+        "message": "Мы используем Envato API. $linkStart$ Сгенерируйте персональный токен $linkEnd$ и введите его в поле ниже:"
+    },
+    "startConfirmation": {
+        "message": "Нажмите <Enter> для подтверждения"
+    },
+    "report": {
+        "message": "Отчёт"
+    },
+    "reportSummary": {
+        "message": "Сводка"
+    },
+    "reportSummaryColumns": {
+        "message": "Стоимость \\ Продажи \\ Выручка"
+    },
+    "reportRevenueDiagram": {
+        "message": "Диаграмма выручки"
+    },
+    "reportRevenueDiagramLegend": {
+        "message": "Покуп. сбор \\ Подоход. налог \\ Автор. сбор \\ Заработок"
+    },
+    "reportAverage": {
+        "message": "В среднем"
+    },
+    "reportAverageColumns": {
+        "message": "Период \\ Продажи \\ Выручка \\ Заработок"
+    },
+    "reportAverageRows": {
+        "message": "Час \\ День \\ Неделя \\ Месяц \\ Год"
+    },
+    "settings": {
+        "message": "Установки"
+    },
+    "settingsAppearance": {
+        "message": "Внешний вид"
+    },
+    "settingsAppearanceColorScheme": {
+        "message": "Цветовая схема \\ Предпочтительная цветовая схема \\ Светлая \\ Тёмная"
+    },
+    "settingsAppearanceInterfaceScale": {
+        "message": "Масштаб интерфейса \\ Предпочтительный масштаб интерфейса"
+    },
+    "settingsCalculations": {
+        "message": "Вычисления"
+    },
+    "settingsCalculationsWithholdingTax": {
+        "message": "Подоходный налог \\ Используется в качестве запасного значения когда определить ставку невозможно"
+    },
+    "settingsAuthentication": {
+        "message": "Аутентификация"
+    },
+    "settingsAuthenticationToken": {
+        "message": "Токен \\ Требуется для запросов к $api$ \\ $length$ символа…"
+    }
+}
