@@ -10,9 +10,7 @@ export class ItemEstimate {
         /**
             @type {Number}
         */
-        this.buyerFee = buyerFees[
-            `${ properties.site }/${ properties.category }`
-        ];
+        this.buyerFee = buyerFees[`${ properties.site }/${ properties.category }`];
         /**
             @type {Boolean}
         */
@@ -88,14 +86,14 @@ export class ItemEstimate {
         @returns {Number}
     */
     revenueFor(period) {
-        return this.listPrice * this.sales / (this.age / period);
+        return this.listPrice * this.salesFor(period);
     }
     /**
         @param {Number} period
         @returns {Number}
     */
     profitFor(period) {
-        return this.profit * this.sales / (this.age / period);
+        return this.profit * this.salesFor(period);
     }
 }
 export default ItemEstimate;
