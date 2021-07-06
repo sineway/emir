@@ -1,99 +1,82 @@
-import buyerFees from "/api/data/buyer-fees.js";
-import authorLevels from "/api/data/author-levels.js";
-import authorFees from "/api/data/author-fees.js";
 /**
     @class ItemAudit
-    @param {Object} properties
+    @param {Object} fields
 */
 export class ItemAudit {
-    constructor(properties) {
+    constructor(fields) {
         /**
             @type {Number}
         */
-        this.buyerFee = buyerFees[`${ properties.site }/${ properties.category }`];
-        /**
-            @type {Boolean}
-        */
-        this.exclusive = properties.exclusive;
+        this.period = fields.period
         /**
             @type {Number}
         */
-        this.authorLevel = properties.authorLevel;
+        this.sales = fields.sales
         /**
             @type {Number}
         */
-        this.authorFeeRate = authorFees.nonExclusivePercent / 100;
-        if (this.exclusive) {
-            let nextLevel = Math.min(this.authorLevel + 1, authorLevels.length);
-            let maxLevelAmount = authorLevels.find(item => {
-                return item.level == nextLevel;
-            }).amount - 1;
-            this.authorFeeRate = authorFees.exclusive.find((item, index, list) => {
-                let next = list[index + 1];
-                return next == null || next.amount > maxLevelAmount;
-            }).percent / 100;
-        }
+        this.listPrice = fields.listPrice
         /**
             @type {Number}
         */
-        this.listPrice = properties.listPrice;
+        this.buyerFee = fields.buyerFee
         /**
             @type {Number}
         */
-        this.price = this.listPrice - this.buyerFee;
+        this.taxRate = fields.taxRate
         /**
             @type {Number}
         */
-        this.sales = properties.sales;
-        /**
-            @type {Number}
-        */
-        this.age = properties.age;
-        this.withTaxRate(0);
+        this.authorFeeRate = fields.authorFeeRate
     }
     /**
-        @param {Number} taxRate
-        @returns {ItemAudit}
+        @readonly
+        @type {Number}
     */
-    withTaxRate(taxRate) {
-        /**
-            @type {Number}
-        */
-        this.taxRate = taxRate;
-        /**
-            @type {Number}
-        */
-        this.tax = this.price * this.taxRate;
-        /**
-            @type {Number}
-        */
-        this.authorFee = (this.price - this.tax) * this.authorFeeRate;
-        /**
-            @type {Number}
-        */
-        this.profit = this.price - this.tax - this.authorFee;
-        return this;
+    get price() {
+        return this.listPrice - this.buyerFee
+    }
+    /**
+        @readonly
+        @type {Number}
+    */
+    get tax() {
+        return this.price * this.taxRate
+    }
+    /**
+        @readonly
+        @type {Number}
+    */
+    get authorFee() {
+        return (this.price - this.tax) * this.authorFeeRate
+    }
+    /**
+        @readonly
+        @type {Number}
+    */
+    get earnings() {
+        return this.price - this.tax - this.authorFee
     }
     /**
         @param {Number} period
         @returns {Number}
     */
     salesFor(period) {
-        return this.sales / (this.age / period);
+        return this.sales / (this.period / period)
     }
     /**
         @param {Number} period
         @returns {Number}
     */
     revenueFor(period) {
-        return this.listPrice * this.salesFor(period);
+        return this.listPrice * this.salesFor(period)
     }
     /**
         @param {Number} period
         @returns {Number}
     */
-    profitFor(period) {
-        return this.profit * this.salesFor(period);
+    earningsFor(period) {
+        return this.earnings * this.salesFor(period)
     }
 }
-export default ItemAudit;
+export default ItemAudit

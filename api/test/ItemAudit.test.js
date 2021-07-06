@@ -1,36 +1,35 @@
-import ItemAudit from "/api/ItemAudit.js";
-import TimeUnit from "/api/TimeUnit.js";
+import ItemAudit from "/api/ItemAudit.js"
+import TimeUnit from "/api/TimeUnit.js"
 
 describe("ItemAudit", () => {
 
-    let audit;
+    let audit
 
     beforeEach(() => {
         audit = new ItemAudit({
-            site: "photodune",
-            category: "misc",
-            listPrice: 2,
+            period: TimeUnit.DAY,
             sales: 24,
-            age: TimeUnit.DAY,
-            exclusive: true,
-            authorLevel: 0
-        });
-    });
+            listPrice: 2,
+            buyerFee: 1,
+            authorFeeRate: .5,
+            taxRate: 0
+        })
+    })
 
-    describe("#withTaxRate()", () => {
+    describe("#taxRate", () => {
 
-        it("updates tax, author fee, and profit", () => {
+        it("updates tax, author fee, and earnings", () => {
             expect(
-                audit.withTaxRate(1)
+                Object.assign(audit, { taxRate: 1 })
             ).toEqual(
                 jasmine.objectContaining({
                     tax: 1,
                     authorFee: 0,
-                    profit: 0
+                    earnings: 0
                 })
-            );
-        });
-    });
+            )
+        })
+    })
 
     describe("#salesFor()", () => {
 
@@ -39,9 +38,9 @@ describe("ItemAudit", () => {
                 audit.salesFor(TimeUnit.HOUR)
             ).toBe(
                 1
-            );
-        });
-    });
+            )
+        })
+    })
 
     describe("#revenueFor()", () => {
 
@@ -50,19 +49,19 @@ describe("ItemAudit", () => {
                 audit.revenueFor(TimeUnit.HOUR)
             ).toBe(
                 2
-            );
-        });
-    });
+            )
+        })
+    })
 
-    describe("#profitFor()", () => {
+    describe("#earningsFor()", () => {
 
-        it("returns profit for a certain period of time", () => {
+        it("returns earnings for a certain period of time", () => {
             expect(
-                audit.profitFor(TimeUnit.HOUR)
+                audit.earningsFor(TimeUnit.HOUR)
             ).toBe(
-                .625
-            );
-        });
-    });
-});
+                .5
+            )
+        })
+    })
+})
 
