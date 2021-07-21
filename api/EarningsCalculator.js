@@ -1,8 +1,8 @@
 /**
-    @class ItemAudit
+    @class EarningsCalculator
     @param {Object} fields
 */
-export class ItemAudit {
+export class EarningsCalculator {
     constructor(fields) {
         /**
             @type {Number}
@@ -61,22 +61,22 @@ export class ItemAudit {
         @param {Number} period
         @returns {Number}
     */
-    salesFor(period) {
+    salesPer(period) {
         return this.sales / (this.period / period)
     }
     /**
         @param {Number} period
         @returns {Number}
     */
-    revenueFor(period) {
-        return this.listPrice * this.salesFor(period)
+    revenuePer(period) {
+        return this.listPrice * this.salesPer(period)
     }
     /**
         @param {Number} period
         @returns {Number}
     */
-    earningsFor(period) {
-        return this.earnings * this.salesFor(period)
+    earningsPer(period) {
+        return this.earnings * this.salesPer(period)
     }
 }
-export default ItemAudit
+export default EarningsCalculator

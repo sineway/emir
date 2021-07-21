@@ -1,12 +1,12 @@
-import ItemAudit from "/api/ItemAudit.js"
+import EarningsCalculator from "/api/EarningsCalculator.js"
 import TimeUnit from "/api/TimeUnit.js"
 
-describe("ItemAudit", () => {
+describe("EarningsCalculator", () => {
 
-    let audit
+    let calc
 
     beforeEach(() => {
-        audit = new ItemAudit({
+        calc = new EarningsCalculator({
             period: TimeUnit.DAY,
             sales: 24,
             listPrice: 2,
@@ -20,7 +20,7 @@ describe("ItemAudit", () => {
 
         it("updates tax, author fee, and earnings", () => {
             expect(
-                Object.assign(audit, { taxRate: 1 })
+                Object.assign(calc, { taxRate: 1 })
             ).toEqual(
                 jasmine.objectContaining({
                     tax: 1,
@@ -31,33 +31,33 @@ describe("ItemAudit", () => {
         })
     })
 
-    describe("#salesFor()", () => {
+    describe("#salesPer()", () => {
 
         it("returns number of sales for a certain period of time", () => {
             expect(
-                audit.salesFor(TimeUnit.HOUR)
+                calc.salesPer(TimeUnit.HOUR)
             ).toBe(
                 1
             )
         })
     })
 
-    describe("#revenueFor()", () => {
+    describe("#revenuePer()", () => {
 
         it("returns revenue for a certain period of time", () => {
             expect(
-                audit.revenueFor(TimeUnit.HOUR)
+                calc.revenuePer(TimeUnit.HOUR)
             ).toBe(
                 2
             )
         })
     })
 
-    describe("#earningsFor()", () => {
+    describe("#earningsPer()", () => {
 
         it("returns earnings for a certain period of time", () => {
             expect(
-                audit.earningsFor(TimeUnit.HOUR)
+                calc.earningsPer(TimeUnit.HOUR)
             ).toBe(
                 .5
             )
