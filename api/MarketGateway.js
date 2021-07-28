@@ -20,6 +20,7 @@ export class MarketGateway {
     async get(url) {
         let response = await fetch(`${ this.baseUrl }${ url }`, {
             headers: { authorization: `bearer ${ this.apiToken }` },
+            cache: "force-cache"
         })
         let json = await response.json()
         if (json.error) {
@@ -54,6 +55,12 @@ export class MarketGateway {
     */
     async getCatalogItem(itemId) {
         return this.get(`/v3/market/catalog/item?id=${ itemId }`)
+    }
+    /**
+        @returns {Promise<Object>} https://build.envato.com/api/#market_getTotalItems
+    */
+    async getTotalItems() {
+        return this.get("/v1/market/total-items.json")
     }
 }
 export default MarketGateway

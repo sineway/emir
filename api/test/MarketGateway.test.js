@@ -62,4 +62,17 @@ describe("MarketGateway", () => {
             )
         })
     })
+
+    describe("#getTotalItems()", () => {
+
+        it("resolves to a total number of items available on Envato Market", async () => {
+            expect(
+                await gateway.getTotalItems()
+            ).toEqual(
+                jasmine.objectContaining({
+                   "total-items": jasmine.any(Object)
+                })
+            )
+        })
+    })
 })
