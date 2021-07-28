@@ -3,20 +3,20 @@ import TimeUnit from "/api/TimeUnit.js"
 
 describe("TimeUnitFormat", () => {
 
-    let instance
+	let instance
 
-    beforeEach(() => {
-        instance = new TimeUnitFormat({ locale: "en" })
-    })
+	beforeEach(() => {
+		instance = new TimeUnitFormat({ locale: "en" })
+	})
 
-    describe("#format()", () => {
+	describe("#format()", () => {
 
-        it("returns a string representing a time unit", () => {
-            expect(
-                instance.format(1.5 * TimeUnit.DAY)
-            ).toBe(
-                "2 days"
-            )
-        })
-    })
+		it("returns a string representing a time unit", () => {
+			expect(
+				instance.format(1.5 * TimeUnit.DAY)
+			).toBe(
+				"2 days"
+			)
+		})
+	})
 })
