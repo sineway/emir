@@ -1,25 +1,25 @@
 /**
     @class MarketGateway
-    @param {Object=} fields
+    @param {Object=} properties
 */
 export class MarketGateway {
-    constructor(fields = {}) {
+    constructor(properties = {}) {
         /**
             @type {String}
         */
-        this.baseUrl = fields.baseUrl ?? "https://api.envato.com"
+        this.baseUrl = properties.baseUrl ?? "https://api.envato.com"
         /**
             @type {String}
         */
-        this.apiToken = fields.apiToken
+        this.apiToken = properties.apiToken
     }
     /**
         @param {String} url
         @returns {Promise<Object>}
     */
     async get(url) {
-        let response = await fetch(this.baseUrl + url, {
-            headers: { authorization: "bearer " + this.apiToken }
+        let response = await fetch(`${ this.baseUrl }${ url }`, {
+            headers: { authorization: `bearer ${ this.apiToken }` },
         })
         let json = await response.json()
         if (json.error) {
