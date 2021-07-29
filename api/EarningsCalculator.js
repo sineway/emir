@@ -54,6 +54,13 @@ export class EarningsCalculator {
 		@readonly
 		@type {Number}
 	*/
+	get revenue() {
+		return this.listPrice
+	}
+	/**
+		@readonly
+		@type {Number}
+	*/
 	get earnings() {
 		return this.price - this.tax - this.authorFee
 	}
@@ -69,7 +76,7 @@ export class EarningsCalculator {
 		@returns {Number}
 	*/
 	revenuePer(period) {
-		return this.listPrice * this.salesPer(period)
+		return this.revenue * this.salesPer(period)
 	}
 	/**
 		@param {Number} period
