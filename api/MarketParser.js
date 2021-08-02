@@ -4,15 +4,12 @@ import buyerFees from "./data/buyer-fees.js"
 import usTaxTreaties from "./data/us-tax-treaties.js"
 /**
 	@class MarketParser
-	@param {Object=} properties
 */
 export class MarketParser {
-	constructor(properties = {}) {
-		/**
-			@type {Number}
-		*/
-		this.fallbackTax = properties.fallbackTax ?? 0
-	}
+	/**
+		@type {Number}
+	*/
+	fallbackTax = 0
 	/**
 		@param {Object} json
 		@returns {Object}

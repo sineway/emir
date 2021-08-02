@@ -6,9 +6,8 @@ describe("MarketGateway", () => {
 	if (!pattern.test(localStorage.apiToken)) {
 		localStorage.apiToken = prompt("API token")
 	}
-	let gateway = new MarketGateway({
-		apiToken: localStorage.apiToken
-	})
+	let gateway = new MarketGateway
+	gateway.apiToken = localStorage.apiToken
 
 	describe("#getPopular()", () => {
 

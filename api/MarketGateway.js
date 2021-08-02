@@ -1,18 +1,15 @@
 /**
 	@class MarketGateway
-	@param {Object=} properties
 */
 export class MarketGateway {
-	constructor(properties = {}) {
-		/**
-			@type {String}
-		*/
-		this.baseUrl = properties.baseUrl ?? "https://api.envato.com"
-		/**
-			@type {String}
-		*/
-		this.apiToken = properties.apiToken
-	}
+	/**
+		@type {String}
+	*/
+	baseUrl = "https://api.envato.com"
+	/**
+		@type {String}
+	*/
+	apiToken = ""
 	/**
 		@param {String} url
 		@returns {Promise<Object>}
