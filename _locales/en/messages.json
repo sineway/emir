@@ -11,11 +11,11 @@
     "command": {
         "message": "Audit…"
     },
-    "startGreeting": {
-        "message": "Hey there"
+    "loading": {
+        "message": "Loading…"
     },
-    "startInstruction": {
-        "message": "We are using Envato API. $linkStart$ Generate a personal token $linkEnd$ and paste it in the field below:",
+    "authentication": {
+        "message": "Hey there \\ We are using Envato API. $linkStart$ Generate a personal token $linkEnd$ and paste it in the field below:",
         "placeholders": {
             "linkStart": {
                 "content": "<br> <a href=https://build.envato.com/create-token>"
@@ -25,7 +25,7 @@
             }
         }
     },
-    "startConfirmation": {
+    "authenticationConfirmation": {
         "message": "Press <Enter> to confirm"
     },
     "report": {
@@ -34,14 +34,14 @@
     "reportSummary": {
         "message": "Summary"
     },
-    "reportSummaryColumns": {
+    "reportSummaryItems": {
         "message": "Price \\ Sales \\ Revenue"
     },
-    "reportRevenueDiagram": {
-        "message": "Revenue diagram"
+    "reportRevenueChart": {
+        "message": "Revenue chart"
     },
-    "reportRevenueDiagramLegend": {
-        "message": "Buyer fee \\ Withholding tax \\ Author fee \\ Earnings"
+    "reportRevenueChartItems": {
+        "message": "Buyer fee \\ WH Tax \\ Author fee \\ Earnings"
     },
     "reportAverage": {
         "message": "Average"
@@ -62,13 +62,13 @@
         "message": "Color scheme \\ Preferred color scheme \\ Light \\ Dark"
     },
     "settingsAppearanceInterfaceScale": {
-        "message": "Interface scale \\ Preferred interface scale"
+        "message": "Interface scale (%) \\ Preferred interface scale"
     },
     "settingsCalculations": {
         "message": "Calculations"
     },
-    "settingsCalculationsWithholdingTax": {
-        "message": "Withholding tax \\ Used as a fallback when it is impossible to determine the rate"
+    "settingsCalculationsFallbackTax": {
+        "message": "Fallback tax (%) \\ Used as a fallback when it is impossible to determine the rate"
     },
     "settingsAuthentication": {
         "message": "Authentication"

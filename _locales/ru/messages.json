@@ -11,13 +11,13 @@
     "command": {
         "message": "Аудит…"
     },
-    "startGreeting": {
-        "message": "Здравствуйте"
+    "loading": {
+        "message": "Загрузка…"
     },
-    "startInstruction": {
-        "message": "Мы используем Envato API. $linkStart$ Сгенерируйте персональный токен $linkEnd$ и введите его в поле ниже:"
+    "authentication": {
+        "message": "Здравствуйте \\ Мы используем Envato API. $linkStart$ Сгенерируйте персональный токен $linkEnd$ и введите его в поле ниже:"
     },
-    "startConfirmation": {
+    "authenticationConfirmation": {
         "message": "Нажмите <Enter> для подтверждения"
     },
     "report": {
@@ -59,7 +59,7 @@
     "settingsCalculations": {
         "message": "Вычисления"
     },
-    "settingsCalculationsWithholdingTax": {
+    "settingsCalculationsFallbackTax": {
         "message": "Подоходный налог \\ Используется в качестве запасного значения когда определить ставку невозможно"
     },
     "settingsAuthentication": {
