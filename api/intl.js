@@ -1,35 +1,61 @@
-import TimeUnitFormat from "/api/TimeUnitFormat.js"
-
-let locale = "en-US"
+import TimeUnit from "/api/TimeUnit.js"
 /**
-	@type {Intl.NumberFormat}
+	@function
+	@param {String} name
+	@returns {(String|Array<String>)}
 */
-export let compactNumber = new Intl.NumberFormat(locale, {
+export let msg = name => {
+	let value = browser.i18n.getMessage(name)
+	if (value.includes("\\")) {
+		return value.split("\\").map(item => item.trim())
+	}
+	return value
+}
+/**
+	@function
+	@param {Number} value
+	@returns {String}
+*/
+export let tmu = value => {
+	let name = TimeUnit.measure(value)
+	return (value / TimeUnit[name]).toLocaleString([], {
+		style: "unit",
+		unit: name.toLowerCase(),
+		unitDisplay: "long",
+		maximumFractionDigits: 0
+	})
+}
+/**
+	@function
+	@param {Number} value
+	@returns {String}
+*/
+export let num = new Intl.NumberFormat("en-US", {
+	maximumFractionDigits: 2
+}).format
+/**
+	@function
+	@param {Number} value
+	@returns {String}
+*/
+export let numCpt = new Intl.NumberFormat("en-US", {
 	notation: "compact",
 	compactDisplay: "short"
-})
+}).format
 /**
-	@type {Intl.NumberFormat}
+	@function
+	@param {Number} value
+	@returns {String}
 */
-export let number = new Intl.NumberFormat(locale, {
-	maximumFractionDigits: 2
-})
-/**
-	@type {Intl.NumberFormat}
-*/
-export let currency = new Intl.NumberFormat(locale, {
+export let ccy = new Intl.NumberFormat("en-US", {
 	style: "currency",
 	currency: "USD"
-})
+}).format
 /**
-	@type {Intl.NumberFormat}
+	@function
+	@param {Number} value
+	@returns {String}
 */
-export let percent = new Intl.NumberFormat(locale, {
+export let pct = new Intl.NumberFormat("en-US", {
 	style: "percent"
-})
-/**
-	@type {TimeUnitFormat}
-*/
-export let timeUnit = new TimeUnitFormat({
-	style: "long"
-})
+}).format
