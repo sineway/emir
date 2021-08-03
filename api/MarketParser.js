@@ -18,8 +18,6 @@ export class MarketParser {
 		let [siteName] = json.site.split(".")
 		let [categoryName] = json.classification.split("/")
 		return {
-			siteName,
-			categoryName,
 			period: Date.now() - Date.parse(json.published_at),
 			sales: json.number_of_sales,
 			listPrice: json.price_cents / 100,
@@ -72,9 +70,7 @@ export class MarketParser {
 			}).percent
 		}
 		return {
-			authorLevel: level,
-			authorFeeRate: percent / 100,
-			exclusive
+			authorFeeRate: percent / 100
 		}
 	}
 }
