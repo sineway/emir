@@ -1,7 +1,6 @@
 import TimeUnit from "/api/TimeUnit.js"
 
 describe("TimeUnit", () => {
-
 	it("has static fields", () => {
 		expect(
 			Object.entries(TimeUnit)
@@ -15,9 +14,7 @@ describe("TimeUnit", () => {
 			["YEAR", 31_536_000_000]
 		])
 	})
-
 	describe("measure()", () => {
-
 		it("returns a time unit identifier for a value", () => {
 			expect(
 				TimeUnit.measure(24 * TimeUnit.HOUR)
@@ -25,7 +22,6 @@ describe("TimeUnit", () => {
 				"DAY"
 			)
 		})
-
 		it("returns a time unit identifier for a negative value", () => {
 			expect(
 				TimeUnit.measure(-24 * TimeUnit.HOUR)
