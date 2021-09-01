@@ -1,33 +1,37 @@
 /**
 	@class EarningsCalculator
-	@param {Object} properties
 */
 export class EarningsCalculator {
-	constructor(properties) {
-		/**
-			@type {Number}
-		*/
-		this.period = properties.period
-		/**
-			@type {Number}
-		*/
-		this.sales = properties.sales
-		/**
-			@type {Number}
-		*/
-		this.listPrice = properties.listPrice
-		/**
-			@type {Number}
-		*/
-		this.buyerFee = properties.buyerFee
-		/**
-			@type {Number}
-		*/
-		this.taxRate = properties.taxRate
-		/**
-			@type {Number}
-		*/
-		this.authorFeeRate = properties.authorFeeRate
+	/**
+		@type {Number}
+	*/
+	period
+	/**
+		@type {Number}
+	*/
+	sales
+	/**
+		@type {Number}
+	*/
+	listPrice
+	/**
+		@type {Number}
+	*/
+	buyerFee
+	/**
+		@type {Number}
+	*/
+	taxRate
+	/**
+		@type {Number}
+	*/
+	authorFeeRate
+	/**
+		@param {Object=} properties
+	*/
+	constructor(properties = {}) {
+		Object.seal(this)
+		Object.assign(this, properties)
 	}
 	/**
 		@readonly
