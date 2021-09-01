@@ -1,16 +1,16 @@
 import MarketGateway from "/api/MarketGateway.js"
 
 describe("MarketGateway", () => {
-
-	let pattern = /^\w{32}$/
-	if (!pattern.test(localStorage.apiToken)) {
+	if (!/^\w{32}$/.test(localStorage.apiToken)) {
 		localStorage.apiToken = prompt("API token")
 	}
-	let gateway = new MarketGateway
-	gateway.apiToken = localStorage.apiToken
-
+	let gateway
+	beforeEach(() => {
+		gateway = Object.assign(new MarketGateway, {
+			apiToken: localStorage.apiToken
+		})
+	})
 	describe("#getPopular()", () => {
-
 		it("resolves to a popular files for a particular site", async () => {
 			expect(
 				await gateway.getPopular("themeforest")
@@ -21,9 +21,7 @@ describe("MarketGateway", () => {
 			)
 		})
 	})
-
 	describe("#getUser()", () => {
-
 		it("resolves to a user account details", async () => {
 			expect(
 				await gateway.getUser("ThemeFusion")
@@ -34,9 +32,7 @@ describe("MarketGateway", () => {
 			)
 		})
 	})
-
 	describe("#getUserBadges()", () => {
-
 		it("resolves to a list of badges for a given user", async () => {
 			expect(
 				await gateway.getUserBadges("ThemeFusion")
@@ -47,9 +43,7 @@ describe("MarketGateway", () => {
 			)
 		})
 	})
-
 	describe("#getCatalogItem()", () => {
-
 		it("resolves to all details of a particular item on Envato Market", async () => {
 			let itemId = 2833226
 			expect(
@@ -61,9 +55,7 @@ describe("MarketGateway", () => {
 			)
 		})
 	})
-
 	describe("#getTotalItems()", () => {
-
 		it("resolves to a total number of items available on Envato Market", async () => {
 			expect(
 				await gateway.getTotalItems()
