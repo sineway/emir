@@ -1,14 +1,9 @@
 import MarketGateway from "/api/MarketGateway.js"
 
 describe("MarketGateway", () => {
-	if (!/^\w{32}$/.test(localStorage.apiToken)) {
-		localStorage.apiToken = prompt("API token")
-	}
 	let gateway
 	beforeEach(() => {
-		gateway = Object.assign(new MarketGateway, {
-			apiToken: localStorage.apiToken
-		})
+		gateway = new MarketGateway
 	})
 	describe("#getPopular()", () => {
 		it("resolves to a popular files for a particular site", async () => {

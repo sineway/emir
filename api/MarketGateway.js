@@ -9,19 +9,19 @@ export class MarketGateway {
 	/**
 		@type {String}
 	*/
-	apiToken = ""
+	apiToken = "E7ieDZHeScK3I81zGfWpdRZjmxFvOvo5"
 	/**
 		@param {String} url
 		@returns {Promise<Object>}
 	*/
 	async get(url) {
 		let response = await fetch(`${ this.baseUrl }${ url }`, {
-			headers: { authorization: `bearer ${ this.apiToken }` },
-			cache: "force-cache"
+			headers: { authorization: `bearer ${ this.apiToken }` }
 		})
 		let json = await response.json()
 		if (json.error) {
-			throw new Error(json.description ?? json.error)
+			let error = new Error(json.description ?? json.error)
+			throw Object.assign(error, { response })
 		}
 		return json
 	}
