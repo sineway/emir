@@ -39,6 +39,8 @@ export class Market {
 		*/
 		return {
 			name: item.name,
+			...user,
+			...badges,
 			records: [{
 				...dataForAllTime,
 				period: TimeUnit.WEEK,
