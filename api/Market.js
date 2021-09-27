@@ -57,4 +57,4 @@ export class Market {
 		}
 	}
 }
-export default new Market
+export default Market
