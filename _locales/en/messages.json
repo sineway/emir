@@ -5,51 +5,60 @@
     "description": {
         "message": "View estimated item revenue on Envato Market"
     },
-    "version": {
-        "message": "Version $1"
-    },
-    "command": {
-        "message": "Audit…"
+    "contextMenu": {
+        "message": "Estimate…"
     },
     "loading": {
         "message": "Loading…"
     },
-    "authentication": {
-        "message": "Hey there \\ We are using Envato API. $linkStart$ Generate a personal token $linkEnd$ and paste it in the field below:",
+    "error": {
+        "message": "Error $error_code$",
         "placeholders": {
-            "linkStart": {
-                "content": "<br> <a href=https://build.envato.com/create-token>"
-            },
-            "linkEnd": {
-                "content": "</a>"
+            "error_code": {
+                "content": "$1",
+                "example": "404"
             }
         }
     },
-    "authenticationConfirmation": {
-        "message": "Press <Enter> to confirm"
+    "error_429": {
+        "message": "The rate limit of API calls has been exceeded. Try again in $waiting_time$",
+        "placeholders": {
+            "waiting_time": {
+                "content": "$1",
+                "example": "5 minutes"
+            }
+        }
     },
-    "report": {
-        "message": "Report"
+    "powered_by": {
+        "message": "Powered by $envato_api$",
+        "placeholders": {
+            "envato_api": {
+                "content": "<a class=anchor href=https://build.envato.com>Envato API</a>"
+            }
+        }
     },
-    "reportSummary": {
+    "estimates": {
+        "message": "Estimates"
+    },
+    "estimatesSummary": {
         "message": "Summary"
     },
-    "reportSummaryItems": {
-        "message": "Price \\ Sales \\ Revenue"
+    "estimatesSummaryItems": {
+        "message": "Sales \\ Revenue \\ Earnings"
     },
-    "reportRevenueChart": {
+    "estimatesRevenueChart": {
         "message": "Revenue chart"
     },
-    "reportRevenueChartItems": {
-        "message": "Buyer fee \\ WH Tax \\ Author fee \\ Earnings"
+    "estimatesRevenueChartItems": {
+        "message": "Buyer fee \\ Withholding tax \\ Author fee \\ Earnings"
     },
-    "reportAverage": {
+    "estimatesAverage": {
         "message": "Average"
     },
-    "reportAverageColumns": {
+    "estimatesAverageColumns": {
         "message": "Period \\ Sales \\ Revenue \\ Earnings"
     },
-    "reportAverageRows": {
+    "estimatesAverageRows": {
         "message": "Hour \\ Day \\ Week \\ Month \\ Year"
     },
     "settings": {
@@ -61,27 +70,13 @@
     "settingsAppearanceColorScheme": {
         "message": "Color scheme \\ Preferred color scheme \\ Light \\ Dark"
     },
-    "settingsAppearanceInterfaceScale": {
-        "message": "Interface scale (%) \\ Preferred interface scale"
+    "settingsAppearanceHue": {
+        "message": "Hue (deg) \\ Preferred hue of the color scheme"
     },
     "settingsCalculations": {
         "message": "Calculations"
     },
     "settingsCalculationsFallbackTax": {
-        "message": "Fallback tax (%) \\ Used as a fallback when it is impossible to determine the rate"
-    },
-    "settingsAuthentication": {
-        "message": "Authentication"
-    },
-    "settingsAuthenticationToken": {
-        "message": "API token \\ Required for requests to $api$ \\ $length$ characters…",
-        "placeholders": {
-            "api": {
-                "content": "api.envato.com"
-            },
-            "length": {
-                "content": "32"
-            }
-        }
+        "message": "Default tax (%) \\ Used as a fallback when it is impossible to determine the rate"
     }
 }
