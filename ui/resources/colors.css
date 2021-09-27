@@ -1,0 +1,54 @@
+/*
+	GNOME HIG Colors
+	https://gitlab.gnome.org/Teams/Design/HIG-app-icons/-/tree/master
+
+	- Changed format to HSL
+	- Added var(--hue) for light/dark colors
+*/
+:root {
+	--blue1: hsl(213 76% 77%);
+	--blue2: hsl(213 76% 65%);
+	--blue3: hsl(213 76% 55%);
+	--blue4: hsl(213 77% 48%);
+	--blue5: hsl(213 75% 40%);
+	--green1: hsl(133 76% 75%);
+	--green2: hsl(141 71% 62%);
+	--green3: hsl(147 63% 51%);
+	--green4: hsl(152 62% 47%);
+	--green5: hsl(152 62% 39%);
+	--yellow1: hsl(56 92% 70%);
+	--yellow2: hsl(52 92% 67%);
+	--yellow3: hsl(50 92% 57%);
+	--yellow4: hsl(47 92% 51%);
+	--yellow5: hsl(42 92% 47%);
+	--orange1: hsl(33 100% 72%);
+	--orange2: hsl(30 100% 64%);
+	--orange3: hsl(28 100% 50%);
+	--orange4: hsl(25 100% 45%);
+	--orange5: hsl(21 100% 39%);
+	--red1: hsl(6 90% 64%);
+	--red2: hsl(357 84% 56%);
+	--red3: hsl(357 78% 49%);
+	--red4: hsl(356 75% 43%);
+	--red5: hsl(353 70% 38%);
+	--purple1: hsl(299 55% 70%);
+	--purple2: hsl(294 50% 59%);
+	--purple3: hsl(285 45% 46%);
+	--purple4: hsl(283 44% 43%);
+	--purple5: hsl(274 42% 36%);
+	--brown1: hsl(27 38% 68%);
+	--brown2: hsl(27 38% 53%);
+	--brown3: hsl(27 38% 43%);
+	--brown4: hsl(28 38% 38%);
+	--brown5: hsl(27 38% 28%);
+	--light1: hsl(0 0% 100%);
+	--light2: hsl(var(--hue, 30) 10% 96%);
+	--light3: hsl(var(--hue, 45) 6% 86%);
+	--light4: hsl(var(--hue, 45) 3% 75%);
+	--light5: hsl(var(--hue, 45) 2% 60%);
+	--dark1: hsl(var(--hue, 252) 2% 47%);
+	--dark2: hsl(var(--hue, 255) 4% 38%);
+	--dark3: hsl(var(--hue, 261) 11% 25%);
+	--dark4: hsl(var(--hue, 257) 23% 16%);
+	--dark5: hsl(0 0% 0%);
+}
