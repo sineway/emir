@@ -30,8 +30,12 @@ export class EarningsCalculator {
 		@param {Object=} properties
 	*/
 	constructor(properties = {}) {
-		Object.seal(this)
-		Object.assign(this, properties)
+		Object.keys(this).forEach(name => {
+			if (!properties.hasOwnProperty(name)) {
+				throw new Error(`Missing property <${ name }>`)
+			}
+			this[name] = properties[name]
+		})
 	}
 	/**
 		@readonly
