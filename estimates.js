@@ -32,37 +32,37 @@ page.render(async () => {
 			count: index + 1,
 			period: item.period,
 			summary: {
-				title: browser.i18n.getMessage("estimatesSummary"),
+				title: browser.i18n.getMessage("estimates__summary"),
 				items: ["sales", "revenue", "earnings"].map((name, index) => {
 					let value = item[`${ name }Per`](item.period)
 					let format = page.template.formats[name == "sales" ? "number" : "currency"]
 					return {
 						value,
 						valueFormatted: format(value),
-						label: browser.i18n.getMessage("estimatesSummaryItems").split("\\")[index]
+						label: browser.i18n.getMessage("estimates__summary_items").split("\\")[index]
 					}
 				})
 			},
 			revenueChart: {
-				title: browser.i18n.getMessage("estimatesRevenueChart"),
+				title: browser.i18n.getMessage("estimates__revenue_chart"),
 				items: ["buyerFee", "tax", "authorFee", "earnings"].map((key, index) => {
 					let value = item[key]
 					return {
-						label: browser.i18n.getMessage("estimatesRevenueChartItems").split("\\")[index],
+						label: browser.i18n.getMessage("estimates__revenue_chart_items").split("\\")[index],
 						value: value * item.sales,
 						ratio: value / item.listPrice
 					}
 				})
 			},
 			average: {
-				title: browser.i18n.getMessage("estimatesAverage"),
-				columns: browser.i18n.getMessage("estimatesAverageColumns").split("\\").map(name => {
+				title: browser.i18n.getMessage("estimates__average"),
+				columns: browser.i18n.getMessage("estimates__average_columns").split("\\").map(name => {
 					return { name }
 				}),
 				rows: ["Hour", "Day", "Week", "Month", "Year"].map((key, index) => {
 					let period = TimeUnit[key.toUpperCase()]
 					return {
-						period: browser.i18n.getMessage("estimatesAverageRows").split("\\")[index],
+						period: browser.i18n.getMessage("estimates__average_rows").split("\\")[index],
 						sales: item.salesPer(period),
 						revenue: item.revenuePer(period),
 						earnings: item.earningsPer(period)

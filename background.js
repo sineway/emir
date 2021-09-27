@@ -10,7 +10,7 @@ browser.runtime.onInstalled.addListener(() => {
 		"*://photodune.net/item/*",
 		"*://3docean.net/item/*"
 	]
-	let title = browser.i18n.getMessage("contextMenu")
+	let title = browser.i18n.getMessage("context_menu")
 
 	browser.contextMenus.create({
 		contexts: ["page"],

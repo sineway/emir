@@ -5,11 +5,61 @@
     "description": {
         "message": "View estimated item revenue on Envato Market"
     },
-    "contextMenu": {
+    "context_menu": {
         "message": "Estimate…"
     },
     "loading": {
         "message": "Loading…"
+    },
+    "estimates": {
+        "message": "Estimates"
+    },
+    "estimates__summary": {
+        "message": "Summary"
+    },
+    "estimates__summary_items": {
+        "message": "Sales \\ Revenue \\ Earnings"
+    },
+    "estimates__revenue_chart": {
+        "message": "Revenue chart"
+    },
+    "estimates__revenue_chart_items": {
+        "message": "Buyer fee \\ Withholding tax \\ Author fee \\ Earnings"
+    },
+    "estimates__average": {
+        "message": "Average"
+    },
+    "estimates__average_columns": {
+        "message": "Period \\ Sales \\ Revenue \\ Earnings"
+    },
+    "estimates__average_rows": {
+        "message": "Hour \\ Day \\ Week \\ Month \\ Year"
+    },
+    "settings": {
+        "message": "Settings"
+    },
+    "settings__appearance": {
+        "message": "Appearance"
+    },
+    "settings__color_scheme": {
+        "message": "Color scheme \\ Preferred color scheme \\ Light \\ Dark"
+    },
+    "settings__hue": {
+        "message": "Hue (deg) \\ Preferred hue of the color scheme"
+    },
+    "settings__calculations": {
+        "message": "Calculations"
+    },
+    "settings__withholding_tax": {
+        "message": "Withholding tax (%) \\ The US royalty withholding tax which applies when author sells to a US buyer"
+    },
+    "powered_by": {
+        "message": "Powered by $envato_api$",
+        "placeholders": {
+            "envato_api": {
+                "content": "<a class=anchor href=https://build.envato.com>Envato API</a>"
+            }
+        }
     },
     "error": {
         "message": "Error $error_code$",
@@ -28,55 +78,5 @@
                 "example": "5 minutes"
             }
         }
-    },
-    "powered_by": {
-        "message": "Powered by $envato_api$",
-        "placeholders": {
-            "envato_api": {
-                "content": "<a class=anchor href=https://build.envato.com>Envato API</a>"
-            }
-        }
-    },
-    "estimates": {
-        "message": "Estimates"
-    },
-    "estimatesSummary": {
-        "message": "Summary"
-    },
-    "estimatesSummaryItems": {
-        "message": "Sales \\ Revenue \\ Earnings"
-    },
-    "estimatesRevenueChart": {
-        "message": "Revenue chart"
-    },
-    "estimatesRevenueChartItems": {
-        "message": "Buyer fee \\ Withholding tax \\ Author fee \\ Earnings"
-    },
-    "estimatesAverage": {
-        "message": "Average"
-    },
-    "estimatesAverageColumns": {
-        "message": "Period \\ Sales \\ Revenue \\ Earnings"
-    },
-    "estimatesAverageRows": {
-        "message": "Hour \\ Day \\ Week \\ Month \\ Year"
-    },
-    "settings": {
-        "message": "Settings"
-    },
-    "settingsAppearance": {
-        "message": "Appearance"
-    },
-    "settingsAppearanceColorScheme": {
-        "message": "Color scheme \\ Preferred color scheme \\ Light \\ Dark"
-    },
-    "settingsAppearanceHue": {
-        "message": "Hue (deg) \\ Preferred hue of the color scheme"
-    },
-    "settingsCalculations": {
-        "message": "Calculations"
-    },
-    "settingsCalculationsFallbackTax": {
-        "message": "Default tax (%) \\ Used as a fallback when it is impossible to determine the rate"
     }
 }
