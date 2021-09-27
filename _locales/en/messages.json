@@ -1,9 +1,9 @@
 {
     "name": {
-        "message": "Envato Market Auditor"
+        "message": "EMIR | Envato Market Item Revenue"
     },
     "description": {
-        "message": "Find out what income a specific product is generating on Envato Market"
+        "message": "View estimated item revenue on Envato Market"
     },
     "version": {
         "message": "Version $1"
