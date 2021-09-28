@@ -1,7 +1,7 @@
-import MarketGateway from "./MarketGateway.js"
-import MarketParser from "./MarketParser.js"
-import TimeUnit from "./TimeUnit.js"
-import EarningsCalculator from "./EarningsCalculator.js"
+import MarketGateway from "/api/MarketGateway.js"
+import MarketParser from "/api/MarketParser.js"
+import TimeUnit from "/api/TimeUnit.js"
+import EarningsCalculator from "/api/EarningsCalculator.js"
 /**
 	@class Market
 */
