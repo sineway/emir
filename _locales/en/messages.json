@@ -42,16 +42,19 @@
         "message": "Appearance"
     },
     "settings__color_scheme": {
-        "message": "Color scheme \\ Preferred color scheme \\ Light \\ Dark"
+        "message": "Color scheme \\ Adjust hue if necessary \\ Light \\ Dark"
     },
     "settings__hue": {
-        "message": "Hue (deg) \\ Preferred hue of the color scheme"
+        "message": "Hue (deg) \\ Tip: Dark color scheme looks good with a value around 255"
+    },
+    "settings__author_badges": {
+        "message": "Author badges \\ Note: Many authors do not indicate their country \\ Country \\ Level"
     },
     "settings__calculations": {
         "message": "Calculations"
     },
     "settings__withholding_tax": {
-        "message": "Withholding tax (%) \\ The US royalty withholding tax which applies when author sells to a US buyer"
+        "message": "Withholding tax (%) \\ Applies when a non-US author sells to a US buyer"
     },
     "powered_by": {
         "message": "Powered by $envato_api$",
