@@ -1,7 +1,7 @@
-import authorLevels from "./data/author-levels.js"
-import authorFees from "./data/author-fees.js"
-import buyerFees from "./data/buyer-fees.js"
-import usTaxTreaties from "./data/us-tax-treaties.js"
+import authorLevels from "./resources/author-levels.js"
+import authorFees from "./resources/author-fees.js"
+import buyerFees from "./resources/buyer-fees.js"
+import usTaxTreaties from "./resources/us-tax-treaties.js"
 /**
 	@class MarketParser
 */
