@@ -84,6 +84,10 @@ page.render(async () => {
 		addEventListener("hashchange", ({ newURL }) => {
 			tabs.forEach(item => {
 				item.classList.toggle("button--primary", item.href == newURL)
+				// Keep focus during keyboard navigation
+				if (item.href == newURL) {
+					item.focus()
+				}
 			})
 		})
 		dispatchEvent(
