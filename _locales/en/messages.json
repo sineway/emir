@@ -45,7 +45,7 @@
         "message": "Color scheme \\ Adjust hue if necessary \\ Light \\ Dark"
     },
     "settings__hue": {
-        "message": "Hue (deg) \\ Tip: Dark color scheme looks good with a value around 255"
+        "message": "Hue (deg) \\ Light color scheme looks good with a value 45, while dark with a value 255"
     },
     "settings__author_badges": {
         "message": "Author badges \\ Note: Many authors do not indicate their country \\ Country \\ Level"
@@ -54,7 +54,7 @@
         "message": "Calculations"
     },
     "settings__withholding_tax": {
-        "message": "Withholding tax (%) \\ Applies when a non-US author sells to a US buyer"
+        "message": "Withholding tax (%) \\ Used when country is unknown"
     },
     "powered_by": {
         "message": "Powered by $envato_api$",
