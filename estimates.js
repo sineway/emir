@@ -4,14 +4,16 @@ import TimeUnit from "/api/TimeUnit.js"
 
 let page = new Page
 let market = new Market
-
+let defaults = {
+	...market.gateway,
+	...market.parser,
+	countryBadge: true,
+	authorLevelBadge: false
+}
 page.render(async () => {
-	let settings = await browser.storage.local.get({
-		...market.gateway,
-		...market.parser
-	})
+	let settings = await browser.storage.local.get(defaults)
 	market.gateway.apiToken = settings.apiToken
-	market.parser.fallbackTax = settings.fallbackTax
+	market.parser.withholdingTax = settings.withholdingTax
 
 	let url = new URL(location)
 	let estimate = await market.estimateItem(url.searchParams.get("id"))
@@ -24,9 +26,19 @@ page.render(async () => {
 				title: estimate.name,
 				referer: `${ url.pathname }?${ url.searchParams }`
 			}) }`,
-			badges: estimate["user-badges"].filter(item => {
-				return /^country/.test(item.name)
-			})
+			authorBadges: Object.keys(defaults).filter(key => {
+				return key.endsWith("Badge") && settings[key]
+			}).map(key => {
+				return key
+					// remove <Badge> suffix
+					.slice(0, -5)
+					// convert to snake_case
+					.replace(/[A-Z]/g, "_$&")
+					.toLowerCase()
+			}).map(key => {
+				return estimate["user-badges"]
+					.find(badge => badge.name.startsWith(key))
+			}).filter(badge => badge)
 		},
 		records: estimate.records.map((item, index) => ({
 			count: index + 1,
@@ -73,25 +85,14 @@ page.render(async () => {
 		poweredBy: browser.i18n.getMessage("powered_by")
 	}
 }).then(() => {
-	let tabs = document.querySelectorAll(`a[href^="#"]`)
-	let newURL = tabs.item(0).href
-
-	// 1. Reveal tab panel
-	location.replace(newURL)
-
-	// 2. Highlight current tab
-	if (tabs.length > 1) {
-		addEventListener("hashchange", ({ newURL }) => {
-			tabs.forEach(item => {
-				item.classList.toggle("button--primary", item.href == newURL)
-				// Keep focus during keyboard navigation
-				if (item.href == newURL) {
-					item.focus()
-				}
-			})
-		})
-		dispatchEvent(
-			new HashChangeEvent("hashchange", { newURL })
-		)
-	}
+	addEventListener("change", () => {
+		location.hash = tabs.input.value
+	})
+	addEventListener("hashchange", () => {
+		let input = tabs.querySelector(`input[value="${ location.hash }"`)
+		input.checked = true
+		input.focus()
+	})
+	location.hash = ""
+	location.hash = "#panel-1"
 })

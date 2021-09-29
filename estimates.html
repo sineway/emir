@@ -18,7 +18,7 @@
 							<span class="icon icon--tune"></span>
 						</a>
 					</li>
-					<template data-path="header.badges">
+					<template data-path="header.authorBadges">
 						<li class="header__menu-item">
 							<span class="button button--narrow" title="{{ label }}">
 								<img class="icon icon--inline" src="{{ image }}">
@@ -28,15 +28,23 @@
 				</menu>
 			</header>
 			<main class="tabs main">
-				<nav class="tabs__list">
+				<form class="tabs__list" name="tabs">
 					<template data-path="records">
-						<a class="button tabs__item" href="#period-{{ count }}">
-							{{ period | duration }}
-						</a>
+						<label class="tabs__item">
+							<input
+								class="tabs__input"
+								type="radio"
+								name="input"
+								value="#panel-{{ count }}"
+							>
+							<span class="button tabs__label">
+								{{ period | duration }}
+							</span>
+						</label>
 					</template>
-				</nav>
+				</form>
 				<template data-path="records">
-					<article class="tabs__panel" id="period-{{ count }}">
+					<article class="tabs__panel" id="panel-{{ count }}">
 						<h2 class="heading-2">
 							{{ summary.title }}
 						</h2>
@@ -57,16 +65,16 @@
 						</h2>
 						<figure class="pie-chart">
 							<div
-								class="pie-chart__graphics"
+								class="pie-chart__image"
 								style="
-									--percent-1: {{ revenueChart.items.0.ratio | percent }};
-									--percent-2: {{ revenueChart.items.1.ratio | percent }};
-									--percent-3: {{ revenueChart.items.2.ratio | percent }};
-									--percent-4: {{ revenueChart.items.3.ratio | percent }};
+									--relativeColorStop1: {{ revenueChart.items.0.ratio }}turn;
+									--relativeColorStop2: {{ revenueChart.items.1.ratio }}turn;
+									--relativeColorStop3: {{ revenueChart.items.2.ratio }}turn;
+									--relativeColorStop4: {{ revenueChart.items.3.ratio }}turn;
 								"
 							>
 								<div
-									class="pie-chart__graphics-label"
+									class="pie-chart__total-value"
 									title="{{ summary.items.1.value | currency }} (100%)"
 								>
 									{{ summary.items.1.value | compact }}
@@ -75,13 +83,11 @@
 							<figcaption class="pie-chart__legend">
 								<template data-path="revenueChart.items">
 									<div
-										class="pie-chart__legend-item"
+										class="pie-chart__segment-label"
 										title="{{ value | currency }} ({{ ratio | percent }})"
 									>
-										<span class="pie-chart__legend-item-label">
-											{{ label }}
-										</span>
-										<span class="pie-chart__legend-item-value">
+										{{ label }}
+										<span class="pie-chart__segment-value">
 											{{ value | compact }}
 										</span>
 									</div>
@@ -128,15 +134,13 @@
 			</footer>
 		</template>
 		<template data-path="error">
-			<main class="main">
-				<div class="main__center">
-					<h1 class="heading-1">
-						{{ title }}
-					</h1>
-					<p class="paragraph">
-						{{ description }}
-					</p>
-				</div>
+			<main class="main main--only">
+				<h1 class="heading-1">
+					{{ title }}
+				</h1>
+				<p class="paragraph">
+					{{ description }}
+				</p>
 			</main>
 		</template>
 	</body>
