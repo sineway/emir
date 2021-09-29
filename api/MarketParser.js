@@ -9,7 +9,7 @@ export class MarketParser {
 	/**
 		@type {Number}
 	*/
-	fallbackTax = 0
+	withholdingTax = 15
 	/**
 		@param {Object} json
 		@returns {Object}
@@ -43,8 +43,17 @@ export class MarketParser {
 		@returns {Object}
 	*/
 	parseUser(json) {
-		let { user } = json
-		let percent = usTaxTreaties[user.country] ?? this.fallbackTax
+		let { country } = json.user
+		let percent
+		if (country == "") {
+			percent = this.withholdingTax
+		} else if (country == "United States") {
+			percent = 0
+		} else if (country in usTaxTreaties) {
+			percent = usTaxTreaties[country]
+		} else {
+			percent = 30
+		}
 		return {
 			taxRate: percent / 100
 		}
