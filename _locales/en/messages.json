@@ -1,85 +1,85 @@
 {
-    "name": {
-        "message": "EMIR | Envato Market Item Revenue"
-    },
-    "description": {
-        "message": "View estimated item revenue on Envato Market"
-    },
-    "context_menu": {
-        "message": "Estimate…"
-    },
-    "loading": {
-        "message": "Loading…"
-    },
-    "estimates": {
-        "message": "Estimates"
-    },
-    "estimates__summary": {
-        "message": "Summary"
-    },
-    "estimates__summary_items": {
-        "message": "Sales \\ Revenue \\ Earnings"
-    },
-    "estimates__revenue_chart": {
-        "message": "Revenue chart"
-    },
-    "estimates__revenue_chart_items": {
-        "message": "Buyer fee \\ Withholding tax \\ Author fee \\ Earnings"
-    },
-    "estimates__average": {
-        "message": "Average"
-    },
-    "estimates__average_columns": {
-        "message": "Period \\ Sales \\ Revenue \\ Earnings"
-    },
-    "estimates__average_rows": {
-        "message": "Hour \\ Day \\ Week \\ Month \\ Year"
-    },
-    "settings": {
-        "message": "Settings"
-    },
-    "settings__appearance": {
-        "message": "Appearance"
-    },
-    "settings__color_scheme": {
-        "message": "Color scheme \\ Adjust hue if necessary \\ Light \\ Dark"
-    },
-    "settings__hue": {
-        "message": "Hue (deg) \\ Light color scheme looks good with a value 45, while dark with a value 255"
-    },
-    "settings__author_badges": {
-        "message": "Author badges \\ Note: Many authors do not indicate their country \\ Country \\ Level"
-    },
-    "settings__calculations": {
-        "message": "Calculations"
-    },
-    "settings__withholding_tax": {
-        "message": "Withholding tax (%) \\ Used when country is unknown"
-    },
-    "powered_by": {
-        "message": "Powered by $envato_api$",
-        "placeholders": {
-            "envato_api": {
-                "content": "<a class=anchor href=https://build.envato.com>Envato API</a>"
-            }
-        }
-    },
-    "error": {
-        "message": "Error $error_code$",
-        "placeholders": {
-            "error_code": {
-                "content": "$1",
-                "example": "404"
-            }
-        }
-    },
-    "error_429": {
-        "message": "The rate limit of API calls has been exceeded. Try again in $waiting_time$",
-        "placeholders": {
-            "waiting_time": {
-                "content": "$1",
-                "example": "5 minutes"
-            }
-        }
-    }
+	"name": {
+		"message": "EMIR | Envato Market Item Revenue"
+	},
+	"description": {
+		"message": "View estimated item revenue on Envato Market"
+	},
+	"context_menu": {
+		"message": "Estimate…"
+	},
+	"loading": {
+		"message": "Loading…"
+	},
+	"estimates": {
+		"message": "Estimates"
+	},
+	"estimates__summary": {
+		"message": "Summary"
+	},
+	"estimates__summary_items": {
+		"message": "Sales \\ Revenue \\ Earnings"
+	},
+	"estimates__revenue_chart": {
+		"message": "Revenue chart"
+	},
+	"estimates__revenue_chart_items": {
+		"message": "Buyer fee \\ Withholding tax \\ Author fee \\ Earnings"
+	},
+	"estimates__average": {
+		"message": "Average"
+	},
+	"estimates__average_columns": {
+		"message": "Period \\ Sales \\ Revenue \\ Earnings"
+	},
+	"estimates__average_rows": {
+		"message": "Hour \\ Day \\ Week \\ Month \\ Year"
+	},
+	"settings": {
+		"message": "Settings"
+	},
+	"settings__appearance": {
+		"message": "Appearance"
+	},
+	"settings__color_scheme": {
+		"message": "Color scheme \\ Adjust hue if necessary \\ Light \\ Dark"
+	},
+	"settings__hue": {
+		"message": "Hue (deg) \\ Light color scheme looks good with a value 45, while dark with a value 255"
+	},
+	"settings__author_badges": {
+		"message": "Author badges \\ Note: Many authors do not indicate their country \\ Country \\ Level"
+	},
+	"settings__calculations": {
+		"message": "Calculations"
+	},
+	"settings__withholding_tax": {
+		"message": "Withholding tax (%) \\ Used when country is unknown"
+	},
+	"powered_by": {
+		"message": "Powered by $envato_api$",
+		"placeholders": {
+			"envato_api": {
+				"content": "<a class=anchor href=https://build.envato.com>Envato API</a>"
+			}
+		}
+	},
+	"error": {
+		"message": "Error $error_code$",
+		"placeholders": {
+			"error_code": {
+				"content": "$1",
+				"example": "404"
+			}
+		}
+	},
+	"error_429": {
+		"message": "The rate limit of API calls has been exceeded. Try again in $waiting_time$",
+		"placeholders": {
+			"waiting_time": {
+				"content": "$1",
+				"example": "5 minutes"
+			}
+		}
+	}
 }
