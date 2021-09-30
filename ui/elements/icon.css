@@ -25,26 +25,10 @@
 	--image: url("/ui/resources/icons/check.svg");
 }
 
-.icon--dark-mode {
-	--image: url("/ui/resources/icons/dark-mode.svg");
-}
-
-.icon--light-mode {
-	--image: url("/ui/resources/icons/light-mode.svg");
-}
-
 .icon--remove {
 	--image: url("/ui/resources/icons/remove.svg");
 }
 
 .icon--tune {
 	--image: url("/ui/resources/icons/tune.svg");
-}
-
-.icon--visibility-off {
-	--image: url("/ui/resources/icons/visibility-off.svg");
-}
-
-.icon--visibility {
-	--image: url("/ui/resources/icons/visibility.svg");
 }
