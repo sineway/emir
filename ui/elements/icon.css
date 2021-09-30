@@ -1,0 +1,50 @@
+.icon {
+	--size: 1.5rem;
+	background-color: var(--color1);
+	display: inline-block;
+	height: var(--size);
+	-webkit-mask: var(--image) no-repeat center;
+	-webkit-mask-size: var(--size);
+	pointer-events: none;
+	width: var(--size);
+}
+
+.icon--inline {
+	background-color: transparent;
+}
+
+.icon--add {
+	--image: url("/ui/resources/icons/add.svg");
+}
+
+.icon--arrow-back {
+	--image: url("/ui/resources/icons/arrow-back.svg");
+}
+
+.icon--check {
+	--image: url("/ui/resources/icons/check.svg");
+}
+
+.icon--dark-mode {
+	--image: url("/ui/resources/icons/dark-mode.svg");
+}
+
+.icon--light-mode {
+	--image: url("/ui/resources/icons/light-mode.svg");
+}
+
+.icon--remove {
+	--image: url("/ui/resources/icons/remove.svg");
+}
+
+.icon--tune {
+	--image: url("/ui/resources/icons/tune.svg");
+}
+
+.icon--visibility-off {
+	--image: url("/ui/resources/icons/visibility-off.svg");
+}
+
+.icon--visibility {
+	--image: url("/ui/resources/icons/visibility.svg");
+}

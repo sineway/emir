@@ -1,0 +1,33 @@
+.tabs {}
+
+.tabs__list {
+	display: flex;
+	gap: .5rem;
+	margin: 1rem 0;
+}
+
+.tabs__item {
+	flex: 1;
+}
+
+.tabs__input {
+	opacity: 0;
+	position: absolute;
+}
+
+.tabs__label {
+	min-width: 100%;
+}
+
+:checked + .tabs__label {
+	background-color: var(--blue3);
+	color: var(--light2);
+}
+
+.tabs__panel {
+	display: none;
+}
+
+.tabs__panel:target {
+	display: block;
+}

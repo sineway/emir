@@ -1,0 +1,69 @@
+.page {
+	--contentWidth: 16rem;
+	--backgroundColor1: var(--light2);
+	--backgroundColor2: var(--light3);
+	--color1: var(--dark3);
+	--color2: var(--light5);
+	--fontSize1: .625rem;
+	--fontSize2: .75rem;
+	--fontSize3: .9375rem;
+	--fontSize4: 1.5rem;
+	--fontWeight1: 400;
+	--fontWeight2: 500;
+	--brightness1: brightness(.97);
+	--brightness2: brightness(.95);
+	--duration1: .15s;
+	--duration2: 1s;
+	background-color: var(--backgroundColor1);
+	color: var(--color1);
+	cursor: default;
+	font: var(--fontWeight1) 16px/1.6 "Rubik", sans-serif;
+}
+
+.page--dark {
+	--backgroundColor1: var(--dark3);
+	--backgroundColor2: var(--dark2);
+	--color1: var(--light2);
+	--brightness1: brightness(1.1);
+	--brightness2: brightness(1.2);
+}
+
+.page--loading::before,
+.page--loading::after {
+	border-radius: 50%;
+	content: "";
+	height: 1rem;
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	width: 1rem;
+}
+
+@keyframes loading {
+	from {
+		transform: translate(-125%, -50%);
+	}
+	to {
+		transform: translate(125%, -50%);
+	}
+}
+
+.page--loading::before {
+	animation: loading var(--duration2) ease-in-out infinite alternate;
+	background-color: var(--red1);
+}
+
+.page--loading::after {
+	animation: loading var(--duration2) ease-in-out infinite alternate-reverse;
+	background-color: var(--blue3);
+}
+
+.page__body {
+	align-items: center;
+	display: flex;
+	flex-flow: column;
+	font-family: inherit;
+	font-size: var(--fontSize1);
+	margin: 0;
+	min-height: 100vh;
+}

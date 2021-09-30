@@ -1,0 +1,51 @@
+.heading-1 {
+	font-size: var(--fontSize4);
+	font-weight: var(--fontWeight2);
+	line-height: 1.35;
+	margin: 1rem 0;
+}
+
+.heading-2 {
+	color: var(--color2);
+	font-size: var(--fontSize2);
+	font-weight: var(--fontWeight2);
+	line-height: 1rem;
+	margin: 0;
+	padding: .5rem 0;
+}
+
+.paragraph {
+	color: var(--color2);
+	font-size: var(--fontSize3);
+	line-height: 1.5;
+	margin: 1rem 0;
+}
+
+.anchor {
+	color: var(--color1);
+	position: relative;
+	text-decoration: none;
+}
+
+.anchor::after {
+	background-color: var(--blue3);
+	bottom: -.125rem;
+	content: "";
+	height: .125rem;
+	left: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform var(--duration1);
+	width: 100%;
+}
+
+.anchor:hover::after,
+.anchor:focus-visible::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+.anchor:focus-visible {
+	outline: none;
+}
