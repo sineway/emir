@@ -1,6 +1,13 @@
 import PageOptions from "./PageOptions.js"
 import PageTemplate from "./PageTemplate.js"
 import TimeUnit from "/api/TimeUnit.js"
+
+let languageCode = browser.i18n.getUILanguage()
+browser.i18n.detectLanguage(
+	browser.i18n.getMessage("settings__hue") // gives the most accurate result
+).then(result => {
+	languageCode = result.languages[0].language
+})
 /**
 	@class Page
 */
@@ -12,7 +19,7 @@ export class Page {
 		formats: {
 			duration: value => {
 				let name = TimeUnit.measure(value)
-				return (value / TimeUnit[name]).toLocaleString([], {
+				return (value / TimeUnit[name]).toLocaleString(languageCode, {
 					style: "unit",
 					unit: name.toLowerCase(),
 					unitDisplay: "long",
