@@ -17,6 +17,6 @@ export class PageOptions {
 	/**
 		@type {Number}
 	*/
-	baseHeight = 608
+	baseHeight = 612
 }
 export default PageOptions
