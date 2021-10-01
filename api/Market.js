@@ -7,10 +7,6 @@ import EarningsCalculator from "/api/EarningsCalculator.js"
 */
 export class Market {
 	/**
-		@type {Number}
-	*/
-	usBuyersPercent = 40
-	/**
 		@type {MarketGateway}
 	*/
 	gateway = new MarketGateway
@@ -20,9 +16,10 @@ export class Market {
 	parser = new MarketParser
 	/**
 		@param {Number} itemId
+		@param {Object=} options
 		@returns {Promise<ItemEstimate>}
 	*/
-	async estimateItem(itemId) {
+	async estimateItem(itemId, options = {}) {
 		let item = await this.gateway.getCatalogItem(itemId)
 
 		let [user, badges, popular] = await Promise.all([
@@ -30,12 +27,12 @@ export class Market {
 			this.gateway.getUserBadges(item.author_username),
 			this.gateway.getPopular(item.site.split(".").shift())
 		])
-		let dataForAllTime = {
-			usBuyersRatio: this.usBuyersPercent / 100,
-			...this.parser.parseCatalogItem(item),
-			...this.parser.parseUser(user),
-			...this.parser.parseUserBadges(badges)
-		}
+		let dataForAllTime = Object.assign(
+			this.parser.parseCatalogItem(item),
+			this.parser.parseUser(user),
+			this.parser.parseUserBadges(badges),
+			options
+		)
 		let parsedPopular = this.parser.parsePopular(popular, itemId)
 		/**
 			@typedef {ItemEstimate}

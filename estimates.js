@@ -10,13 +10,11 @@ page.render(async () => {
 		authorLevelBadge: false
 	}
 	let settings = await browser.storage.local.get(defaults)
-
-	let market = new Market
-	market.usBuyersPercent = settings.usBuyersPercent
-
 	let url = new URL(location)
-	let estimate = await market.estimateItem(url.searchParams.get("id"))
-
+	let market = new Market
+	let estimate = await market.estimateItem(url.searchParams.get("id"), {
+		usBuyersRatio: settings.usBuyersPercent / 100
+	})
 	return {
 		title: estimate.name,
 		header: {
