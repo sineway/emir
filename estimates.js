@@ -82,14 +82,20 @@ page.render(async () => {
 		poweredBy: browser.i18n.getMessage("powered_by")
 	}
 }).then(() => {
-	addEventListener("change", () => {
-		location.hash = tabs.input.value
-	})
 	addEventListener("hashchange", () => {
 		let input = tabs.querySelector(`input[value="${ location.hash }"`)
-		input.checked = true
-		input.focus()
+		if (input) {
+			input.checked = true
+			input.focus()
+		}
 	})
-	location.hash = ""
-	location.hash = "#panel-1"
+	tabs.addEventListener("change", () => {
+		location.replace([
+			location.pathname,
+			location.search,
+			tabs.input.value
+		].join(""))
+	})
+	tabs.querySelector("input").checked = true
+	tabs.dispatchEvent(new Event("change"))
 })
