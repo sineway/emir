@@ -26,13 +26,13 @@ browser.runtime.onInstalled.addListener(() => {
 	})
 })
 
-browser.contextMenus.onClicked.addListener(async info => {
+browser.contextMenus.onClicked.addListener(info => {
 	let [path, id] = (info.linkUrl ?? info.pageUrl).match(/\/item\/[\w-]+\/(\d+)/)
-	let settings = await browser.storage.local.get(new PageOptions)
+	let pageOptions = new PageOptions
 	browser.windows.create({
 		type: "popup",
 		url: `/estimates.html?${ new URLSearchParams({ id }) }`,
-		width: Math.round(settings.baseWidth * devicePixelRatio),
-		height: Math.round(settings.baseHeight * devicePixelRatio)
+		width: Math.round(pageOptions.baseWidth * devicePixelRatio),
+		height: Math.round(pageOptions.baseHeight * devicePixelRatio)
 	})
 })
