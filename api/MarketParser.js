@@ -7,10 +7,6 @@ import usTaxTreaties from "/api/resources/us-tax-treaties.js"
 */
 export class MarketParser {
 	/**
-		@type {Number}
-	*/
-	withholdingTax = 15
-	/**
 		@param {Object} json
 		@returns {Object}
 	*/
@@ -44,18 +40,16 @@ export class MarketParser {
 	*/
 	parseUser(json) {
 		let { country } = json.user
-		let percent
-		if (country == "") {
-			percent = this.withholdingTax
-		} else if (country == "United States") {
-			percent = 0
+		let usTax
+		if (country == "United States") {
+			usTax = 0
 		} else if (country in usTaxTreaties) {
-			percent = usTaxTreaties[country]
+			usTax = usTaxTreaties[country]
 		} else {
-			percent = 30
+			usTax = 30
 		}
 		return {
-			taxRate: percent / 100
+			usTaxRate: usTax / 100
 		}
 	}
 	/**

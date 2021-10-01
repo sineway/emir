@@ -7,6 +7,10 @@ import EarningsCalculator from "/api/EarningsCalculator.js"
 */
 export class Market {
 	/**
+		@type {Number}
+	*/
+	usBuyersPercent = 40
+	/**
 		@type {MarketGateway}
 	*/
 	gateway = new MarketGateway
@@ -26,11 +30,12 @@ export class Market {
 			this.gateway.getUserBadges(item.author_username),
 			this.gateway.getPopular(item.site.split(".").shift())
 		])
-		let dataForAllTime = Object.assign(
-			this.parser.parseCatalogItem(item),
-			this.parser.parseUser(user),
-			this.parser.parseUserBadges(badges)
-		)
+		let dataForAllTime = {
+			usBuyersRatio: this.usBuyersPercent / 100,
+			...this.parser.parseCatalogItem(item),
+			...this.parser.parseUser(user),
+			...this.parser.parseUserBadges(badges)
+		}
 		let parsedPopular = this.parser.parsePopular(popular, itemId)
 		/**
 			@typedef {ItemEstimate}

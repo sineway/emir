@@ -21,7 +21,11 @@ export class EarningsCalculator {
 	/**
 		@type {Number}
 	*/
-	taxRate
+	usTaxRate
+	/**
+		@type {Number}
+	*/
+	usBuyersRatio
 	/**
 		@type {Number}
 	*/
@@ -48,15 +52,15 @@ export class EarningsCalculator {
 		@readonly
 		@type {Number}
 	*/
-	get tax() {
-		return this.price * this.taxRate
+	get usTax() {
+		return this.price * this.usTaxRate * this.usBuyersRatio
 	}
 	/**
 		@readonly
 		@type {Number}
 	*/
 	get authorFee() {
-		return (this.price - this.tax) * this.authorFeeRate
+		return (this.price - this.usTax) * this.authorFeeRate
 	}
 	/**
 		@readonly
@@ -70,28 +74,28 @@ export class EarningsCalculator {
 		@type {Number}
 	*/
 	get earnings() {
-		return this.price - this.tax - this.authorFee
+		return this.price - this.usTax - this.authorFee
 	}
 	/**
 		@param {Number} period
 		@returns {Number}
 	*/
-	salesPer(period) {
+	salesFor(period) {
 		return this.sales / (this.period / period)
 	}
 	/**
 		@param {Number} period
 		@returns {Number}
 	*/
-	revenuePer(period) {
-		return this.revenue * this.salesPer(period)
+	revenueFor(period) {
+		return this.revenue * this.salesFor(period)
 	}
 	/**
 		@param {Number} period
 		@returns {Number}
 	*/
-	earningsPer(period) {
-		return this.earnings * this.salesPer(period)
+	earningsFor(period) {
+		return this.earnings * this.salesFor(period)
 	}
 }
 export default EarningsCalculator

@@ -3,17 +3,16 @@ import Market from "/api/Market.js"
 import TimeUnit from "/api/TimeUnit.js"
 
 let page = new Page
-let market = new Market
-let defaults = {
-	...market.gateway,
-	...market.parser,
-	countryBadge: true,
-	authorLevelBadge: false
-}
 page.render(async () => {
+	let defaults = {
+		usBuyersPercent: 40,
+		countryBadge: true,
+		authorLevelBadge: false
+	}
 	let settings = await browser.storage.local.get(defaults)
-	market.gateway.apiToken = settings.apiToken
-	market.parser.withholdingTax = settings.withholdingTax
+
+	let market = new Market
+	market.usBuyersPercent = settings.usBuyersPercent
 
 	let url = new URL(location)
 	let estimate = await market.estimateItem(url.searchParams.get("id"))
@@ -46,7 +45,7 @@ page.render(async () => {
 			summary: {
 				title: browser.i18n.getMessage("estimates__summary"),
 				items: ["sales", "revenue", "earnings"].map((name, index) => {
-					let value = item[`${ name }Per`](item.period)
+					let value = item[`${ name }For`](item.period)
 					let format = page.template.formats[name == "sales" ? "number" : "currency"]
 					return {
 						value,
@@ -57,7 +56,7 @@ page.render(async () => {
 			},
 			revenueChart: {
 				title: browser.i18n.getMessage("estimates__revenue_chart"),
-				items: ["buyerFee", "tax", "authorFee", "earnings"].map((key, index) => {
+				items: ["buyerFee", "usTax", "authorFee", "earnings"].map((key, index) => {
 					let value = item[key]
 					return {
 						label: browser.i18n.getMessage("estimates__revenue_chart_items").split("\\")[index],
@@ -75,9 +74,9 @@ page.render(async () => {
 					let period = TimeUnit[key.toUpperCase()]
 					return {
 						period: browser.i18n.getMessage("estimates__average_rows").split("\\")[index],
-						sales: item.salesPer(period),
-						revenue: item.revenuePer(period),
-						earnings: item.earningsPer(period)
+						sales: item.salesFor(period),
+						revenue: item.revenueFor(period),
+						earnings: item.earningsFor(period)
 					}
 				})
 			}

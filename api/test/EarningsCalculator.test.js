@@ -10,44 +10,45 @@ describe("EarningsCalculator", () => {
 			listPrice: 2,
 			buyerFee: 1,
 			authorFeeRate: .5,
-			taxRate: 0
+			usTaxRate: 0,
+			usBuyersRatio: 1
 		})
 	})
-	describe("#taxRate", () => {
-		it("updates tax, author fee, and earnings", () => {
+	describe("#usTaxRate", () => {
+		it("updates US tax, author fee, and earnings", () => {
 			expect(
-				Object.assign(calc, { taxRate: 1 })
+				Object.assign(calc, { usTaxRate: 1 })
 			).toEqual(
 				jasmine.objectContaining({
-					tax: 1,
+					usTax: 1,
 					authorFee: 0,
 					earnings: 0
 				})
 			)
 		})
 	})
-	describe("#salesPer()", () => {
+	describe("#salesFor()", () => {
 		it("returns number of sales for a certain period of time", () => {
 			expect(
-				calc.salesPer(TimeUnit.HOUR)
+				calc.salesFor(TimeUnit.HOUR)
 			).toBe(
 				1
 			)
 		})
 	})
-	describe("#revenuePer()", () => {
+	describe("#revenueFor()", () => {
 		it("returns revenue for a certain period of time", () => {
 			expect(
-				calc.revenuePer(TimeUnit.HOUR)
+				calc.revenueFor(TimeUnit.HOUR)
 			).toBe(
 				2
 			)
 		})
 	})
-	describe("#earningsPer()", () => {
+	describe("#earningsFor()", () => {
 		it("returns earnings for a certain period of time", () => {
 			expect(
-				calc.earningsPer(TimeUnit.HOUR)
+				calc.earningsFor(TimeUnit.HOUR)
 			).toBe(
 				.5
 			)
