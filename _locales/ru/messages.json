@@ -1,71 +1,68 @@
 {
-    "name": {
-        "message": "Аудитор Envato Market"
-    },
-    "description": {
-        "message": "Узнавайте какой доход приносит конкретный товар на рынке Envato"
-    },
-    "version": {
-        "message": "Версия $1"
-    },
-    "command": {
-        "message": "Аудит…"
-    },
-    "loading": {
-        "message": "Загрузка…"
-    },
-    "authentication": {
-        "message": "Здравствуйте \\ Мы используем Envato API. $linkStart$ Сгенерируйте персональный токен $linkEnd$ и введите его в поле ниже:"
-    },
-    "authenticationConfirmation": {
-        "message": "Нажмите <Enter> для подтверждения"
-    },
-    "report": {
-        "message": "Отчёт"
-    },
-    "reportSummary": {
-        "message": "Сводка"
-    },
-    "reportSummaryColumns": {
-        "message": "Стоимость \\ Продажи \\ Выручка"
-    },
-    "reportRevenueDiagram": {
-        "message": "Диаграмма выручки"
-    },
-    "reportRevenueDiagramLegend": {
-        "message": "Покуп. сбор \\ Подоход. налог \\ Автор. сбор \\ Заработок"
-    },
-    "reportAverage": {
-        "message": "В среднем"
-    },
-    "reportAverageColumns": {
-        "message": "Период \\ Продажи \\ Выручка \\ Заработок"
-    },
-    "reportAverageRows": {
-        "message": "Час \\ День \\ Неделя \\ Месяц \\ Год"
-    },
-    "settings": {
-        "message": "Установки"
-    },
-    "settingsAppearance": {
-        "message": "Внешний вид"
-    },
-    "settingsAppearanceColorScheme": {
-        "message": "Цветовая схема \\ Предпочтительная цветовая схема \\ Светлая \\ Тёмная"
-    },
-    "settingsAppearanceInterfaceScale": {
-        "message": "Масштаб интерфейса \\ Предпочтительный масштаб интерфейса"
-    },
-    "settingsCalculations": {
-        "message": "Вычисления"
-    },
-    "settingsCalculationsFallbackTax": {
-        "message": "Подоходный налог \\ Используется в качестве запасного значения когда определить ставку невозможно"
-    },
-    "settingsAuthentication": {
-        "message": "Аутентификация"
-    },
-    "settingsAuthenticationToken": {
-        "message": "Токен \\ Требуется для запросов к $api$ \\ $length$ символа…"
-    }
+	"name": {
+		"message": "ЭМИР (EMIR | Envato Market Item Revenue)"
+	},
+	"description": {
+		"message": "Узнавайте какую выручку приноситят товары на рынке Envato"
+	},
+	"context_menu": {
+		"message": "Оценка в&ыручки…"
+	},
+	"loading": {
+		"message": "Загрузка…"
+	},
+	"estimates": {
+		"message": "Оценка выручки"
+	},
+	"estimates__summary": {
+		"message": "Cводка"
+	},
+	"estimates__summary_items": {
+		"message": "Продажи \\ Выручка \\ Прибыль"
+	},
+	"estimates__revenue_chart": {
+		"message": "Диаграмма выручки"
+	},
+	"estimates__revenue_chart_items": {
+		"message": "Покуп. сбор \\ Налог США \\ Автор. сбор \\ Прибыль"
+	},
+	"estimates__average": {
+		"message": "В среднем"
+	},
+	"estimates__average_columns": {
+		"message": "Период \\ Продажи \\ Выручка \\ Прибыль"
+	},
+	"estimates__average_rows": {
+		"message": "Час \\ День \\ Неделя \\ Месяц \\ Год"
+	},
+	"settings": {
+		"message": "Установки"
+	},
+	"settings__appearance": {
+		"message": "Вид"
+	},
+	"settings__color_scheme": {
+		"message": "Цветовая схема \\ При необходимости отрегулируйте оттенок \\ Светлая \\ Тёмная"
+	},
+	"settings__hue": {
+		"message": "Оттенок (градусы) \\ Рекомендуемые значения: 45 для светлой цветовой схемы, 255 для тёмной"
+	},
+	"settings__author_badges": {
+		"message": "Значки автора \\ Прим.: Многие авторы не указывают страну \\ Страна \\ Уровень"
+	},
+	"settings__calculations": {
+		"message": "Расчёты"
+	},
+	"settings__us_buyers_percent": {
+		"message": "Покупатели из США (%) \\ Используется для расчёта налога США"
+	},
+	"powered_by": {
+		"message": "Работает на"
+	},
+	"error": {
+		"message": "Ошибка $1"
+	},
+	"error_429": {
+		"message": "Превышен лимит скорости вызовов API. Попробуйте снова через $1"
+	}
 }
