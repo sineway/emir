@@ -19,10 +19,13 @@ page.render(async () => {
 		title: estimate.name,
 		header: {
 			title: browser.i18n.getMessage("estimates"),
-			navUrl: `/settings.html?${ new URLSearchParams({
-				title: estimate.name,
-				referer: `${ url.pathname }?${ url.searchParams }`
-			}) }`,
+			navButton: {
+				url: `/settings.html?${ new URLSearchParams({
+					title: estimate.name,
+					return: `${ url }`.replace(url.origin, "")
+				}) }`,
+				label: browser.i18n.getMessage("settings")
+			},
 			authorBadges: Object.keys(defaults).filter(key => {
 				return key.endsWith("Badge") && settings[key]
 			}).map(key => {

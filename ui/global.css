@@ -3,6 +3,6 @@
 	color: var(--dark3);
 }
 
-[title] {
+[title]:not([href]) {
 	cursor: help;
 }
