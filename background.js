@@ -1,4 +1,14 @@
-import PageOptions from "/ui/PageOptions.js"
+// Settings
+
+browser.runtime.onInstalled.addListener(async () => {
+	browser.storage.local.set(
+		await browser.storage.local.get(
+			(await import("/defaults.js")).default
+		)
+	)
+})
+
+// Context menu
 
 browser.runtime.onInstalled.addListener(() => {
 	let patterns = [
@@ -26,13 +36,13 @@ browser.runtime.onInstalled.addListener(() => {
 	})
 })
 
-browser.contextMenus.onClicked.addListener(info => {
+browser.contextMenus.onClicked.addListener(async info => {
 	let [path, id] = (info.linkUrl ?? info.pageUrl).match(/\/item\/[\w-]+\/(\d+)/)
-	let pageOptions = new PageOptions
+	let settings = await browser.storage.local.get()
 	browser.windows.create({
 		type: "popup",
 		url: `/estimates.html?${ new URLSearchParams({ id }) }`,
-		width: Math.round(pageOptions.baseWidth * devicePixelRatio),
-		height: Math.round(pageOptions.baseHeight * devicePixelRatio)
+		width: Math.round(settings.baseWidth * devicePixelRatio),
+		height: Math.round(settings.baseHeight * devicePixelRatio)
 	})
 })

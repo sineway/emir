@@ -1,4 +1,3 @@
-import PageOptions from "./PageOptions.js"
 import PageTemplate from "./PageTemplate.js"
 import TimeUnit from "/api/TimeUnit.js"
 
@@ -12,6 +11,22 @@ browser.i18n.detectLanguage(
 	@class Page
 */
 export class Page {
+	/**
+		@type {String}
+	*/
+	colorScheme = "light"
+	/**
+		@type {Number}
+	*/
+	hue = 45
+	/**
+		@type {Number}
+	*/
+	baseWidth = 384
+	/**
+		@type {Number}
+	*/
+	baseHeight = 612
 	/**
 		@type {PageTemplate}
 	*/
@@ -46,12 +61,9 @@ export class Page {
 		}
 	})
 	constructor() {
-		let defaults = new PageOptions
-		Object.assign(this, defaults)
-
-		browser.storage.local.get(defaults).then(settings => {
-			this.setColorScheme(settings.colorScheme)
-			this.setHue(settings.hue)
+		browser.storage.local.get().then(saved => {
+			this.setColorScheme(saved.colorScheme ?? this.colorScheme)
+			this.setHue(saved.hue ?? this.hue)
 		})
 		browser.storage.onChanged.addListener((changes, area) => {
 			if (area == "local") {
@@ -116,7 +128,7 @@ export class Page {
 			data.page = await callback()
 		}
 		catch (error) {
-			console.dir(error)
+			console.error(error)
 			let errorCode = error.response?.status ?? ""
 			data.error = {
 				title: browser.i18n.getMessage("error", [errorCode]),
