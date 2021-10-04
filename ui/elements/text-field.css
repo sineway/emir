@@ -24,12 +24,9 @@
 	color: var(--backgroundColor2);
 }
 
-.text-field__input:focus-visible {
-	outline: none;
-}
-
 .text-field__input:focus {
 	border-color: var(--blue3);
+	outline: none;
 }
 
 .text-field__input:focus:invalid {
