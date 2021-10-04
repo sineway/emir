@@ -5,7 +5,7 @@
 	height: var(--size);
 	-webkit-mask: var(--image) no-repeat center;
 	-webkit-mask-size: var(--size);
-	pointer-events: none;
+	vertical-align: middle;
 	width: var(--size);
 }
 

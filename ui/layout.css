@@ -21,9 +21,9 @@
 }
 
 .header__menu {
+	align-items: center;
 	display: flex;
 	gap: .5rem;
-	height: 2rem;
 	left: 1rem;
 	list-style: none;
 	margin: 0;
