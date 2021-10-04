@@ -1,15 +1,11 @@
+import defaults from "/defaults.js"
 import Page from "/ui/Page.js"
 import Market from "/api/Market.js"
 import TimeUnit from "/api/TimeUnit.js"
 
 let page = new Page
 page.render(async () => {
-	let defaults = {
-		usBuyersPercent: 40,
-		countryBadge: true,
-		authorLevelBadge: false
-	}
-	let settings = await browser.storage.local.get(defaults)
+	let settings = await browser.storage.local.get()
 	let url = new URL(location)
 	let market = new Market
 	let estimate = await market.estimateItem(url.searchParams.get("id"), {

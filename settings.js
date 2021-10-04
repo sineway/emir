@@ -1,10 +1,10 @@
-import Page from "/ui/Page.js"
 import defaults from "/defaults.js"
+import Page from "/ui/Page.js"
 
 let page = new Page
 page.render(async () => {
 	let url = new URL(location)
-	let settings = await browser.storage.local.get(defaults)
+	let settings = await browser.storage.local.get()
 	return {
 		title: browser.i18n.getMessage("name"),
 		header: {
