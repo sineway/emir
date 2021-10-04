@@ -21,7 +21,6 @@ page.render(async () => {
 			title: browser.i18n.getMessage("estimates"),
 			navButton: {
 				url: `/settings.html?${ new URLSearchParams({
-					title: estimate.name,
 					return: `${ url }`.replace(url.origin, "")
 				}) }`,
 				label: browser.i18n.getMessage("settings")

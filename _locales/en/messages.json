@@ -35,6 +35,12 @@
 	"estimates__average_rows": {
 		"message": "Hour \\ Day \\ Week \\ Month \\ Year"
 	},
+	"powered_by": {
+		"message": "Powered by"
+	},
+	"go_back": {
+		"message": "Back"
+	},
 	"settings": {
 		"message": "Settings"
 	},
@@ -55,9 +61,6 @@
 	},
 	"settings__us_buyers_percent": {
 		"message": "US buyers (%) \\ Used to calculate US tax"
-	},
-	"powered_by": {
-		"message": "Powered by"
 	},
 	"error": {
 		"message": "Error $1"

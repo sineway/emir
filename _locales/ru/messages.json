@@ -35,6 +35,12 @@
 	"estimates__average_rows": {
 		"message": "Час \\ День \\ Неделя \\ Месяц \\ Год"
 	},
+	"powered_by": {
+		"message": "Работает на"
+	},
+	"go_back": {
+		"message": "Назад"
+	},
 	"settings": {
 		"message": "Установки"
 	},
@@ -55,9 +61,6 @@
 	},
 	"settings__us_buyers_percent": {
 		"message": "Покупатели из США (%) \\ Используется для расчёта налога США"
-	},
-	"powered_by": {
-		"message": "Работает на"
 	},
 	"error": {
 		"message": "Ошибка $1"
