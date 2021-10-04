@@ -1,15 +1,3 @@
-// Settings
-
-browser.runtime.onInstalled.addListener(async () => {
-	browser.storage.local.set(
-		await browser.storage.local.get(
-			(await import("/defaults.js")).default
-		)
-	)
-})
-
-// Context menu
-
 browser.runtime.onInstalled.addListener(() => {
 	let patterns = [
 		"*://themeforest.net/item/*",

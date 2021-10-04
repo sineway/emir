@@ -9,62 +9,27 @@ browser.i18n.detectLanguage(
 })
 /**
 	@class Page
+	@param {Object=} options
 */
 export class Page {
-	/**
-		@type {String}
-	*/
-	colorScheme = "light"
-	/**
-		@type {Number}
-	*/
-	hue = 45
-	/**
-		@type {Number}
-	*/
-	baseWidth = 384
-	/**
-		@type {Number}
-	*/
-	baseHeight = 612
-	/**
-		@type {PageTemplate}
-	*/
-	template = new PageTemplate({
-		formats: {
-			duration: value => {
-				let name = TimeUnit.measure(value)
-				return (value / TimeUnit[name]).toLocaleString(languageCode, {
-					style: "unit",
-					unit: name.toLowerCase(),
-					unitDisplay: "long",
-					maximumFractionDigits: 0
-				})
-			},
-			number: new Intl.NumberFormat("en-US", {
-				maximumFractionDigits: 2
-			}).format,
+	constructor(options = {}) {
+		/**
+			@type {Number}
+		*/
+		this.baseWidth = options.baseWidth ?? 0
+		/**
+			@type {Number}
+		*/
+		this.baseHeight = options.baseHeight ?? 0
+		/**
+			@prop {String} colorScheme
+		*/
+		this.setColorScheme(options.colorScheme ?? "")
+		/**
+			@prop {Number} hue
+		*/
+		this.setHue(options.hue ?? 0)
 
-			compact: new Intl.NumberFormat("en-US", {
-				notation: "compact",
-				compactDisplay: "short"
-			}).format,
-
-			currency: new Intl.NumberFormat("en-US", {
-				style: "currency",
-				currency: "USD"
-			}).format,
-
-			percent: new Intl.NumberFormat("en-US", {
-				style: "percent"
-			}).format
-		}
-	})
-	constructor() {
-		browser.storage.local.get().then(saved => {
-			this.setColorScheme(saved.colorScheme ?? this.colorScheme)
-			this.setHue(saved.hue ?? this.hue)
-		})
 		browser.storage.onChanged.addListener((changes, area) => {
 			if (area == "local") {
 				if (changes.colorScheme) {
@@ -116,6 +81,39 @@ export class Page {
 			})
 		}
 	}
+	/**
+		@type {PageTemplate}
+	*/
+	template = new PageTemplate({
+		formats: {
+			duration: value => {
+				let name = TimeUnit.measure(value)
+				return (value / TimeUnit[name]).toLocaleString(languageCode, {
+					style: "unit",
+					unit: name.toLowerCase(),
+					unitDisplay: "long",
+					maximumFractionDigits: 0
+				})
+			},
+			number: new Intl.NumberFormat("en-US", {
+				maximumFractionDigits: 2
+			}).format,
+
+			compact: new Intl.NumberFormat("en-US", {
+				notation: "compact",
+				compactDisplay: "short"
+			}).format,
+
+			currency: new Intl.NumberFormat("en-US", {
+				style: "currency",
+				currency: "USD"
+			}).format,
+
+			percent: new Intl.NumberFormat("en-US", {
+				style: "percent"
+			}).format
+		}
+	})
 	/**
 		@param {Function} callback
 		@returns {Promise}
