@@ -17,6 +17,7 @@
 
 .tabs__label {
 	min-width: 100%;
+	white-space: nowrap;
 }
 
 :checked + .tabs__label {
