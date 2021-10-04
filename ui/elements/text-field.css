@@ -1,0 +1,46 @@
+.text-field {
+	align-items: center;
+	display: flex;
+	height: 2rem;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.text-field__input {
+	background-color: var(--backgroundColor1);
+	border: .125rem solid var(--backgroundColor2);
+	border-radius: .5rem;
+	box-sizing: border-box;
+	color: inherit;
+	font-family: inherit;
+	font-size: var(--fontSize3);
+	height: 100%;
+	padding: 0 .5rem;
+	position: absolute;
+	width: 100%;
+}
+
+.text-field__input::placeholder {
+	color: var(--backgroundColor2);
+}
+
+.text-field__input:focus-visible {
+	outline: none;
+}
+
+.text-field__input:focus {
+	border-color: var(--blue3);
+}
+
+.text-field__input:focus:invalid {
+	border-color: var(--red2);
+}
+
+.text-field__button {
+	height: 1.75rem;
+	z-index: 1;
+}
+
+.text-field__button:last-of-type {
+	margin-right: .125rem;
+}

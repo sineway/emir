@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="page">
+	<head>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="/ui/resources/colors.css">
+		<link rel="stylesheet" href="/ui/resources/fonts.css">
+
+		<link rel="stylesheet" href="/ui/elements/icon.css">
+		<link rel="stylesheet" href="/ui/elements/button.css">
+		<link rel="stylesheet" href="/ui/elements/check-box.css">
+		<link rel="stylesheet" href="/ui/elements/list-box.css">
+		<link rel="stylesheet" href="/ui/elements/setting.css">
+		<link rel="stylesheet" href="/ui/elements/text-field.css">
+		<link rel="stylesheet" href="/ui/elements/typography.css">
+		<script type="module" src="/ui/elements/NumberField.js"></script>
+
+		<link rel="stylesheet" href="/ui/global.css">
+		<link rel="stylesheet" href="/ui/layout.css">
+		<link rel="stylesheet" href="/ui/page.css">
+
+		<script src="/node_modules/webextension-polyfill/dist/browser-polyfill.js"></script>
+		<script type="module" src="/settings.js"></script>
+	</head>
+	<body class="page__body">
+		<template data-path="page">
+			<header class="header">
+				<h1 class="header__title">
+					{{ header.title }}
+				</h1>
+				<menu class="header__menu">
+					<li class="header__menu-item">
+						<a
+							class="button button--narrow"
+							href="{{ header.navButton.url }}"
+							title="{{ header.navButton.label }}"
+						>
+							<span class="icon icon--arrow-back"></span>
+						</a>
+					</li>
+				</menu>
+			</header>
+			<main class="main">
+				<h2 class="heading-2">
+					{{ appearance.title }}
+				</h2>
+				<div class="setting">
+					<h3 class="setting__title">
+						{{ appearance.colorScheme.title }}
+					</h3>
+					<div class="list-box">
+						<template data-path="appearance.colorScheme.options">
+							<label class="list-box__item" tabindex="-1">
+								<span class="list-box__label">
+									{{ label }}
+								</span>
+								<input
+									class="icon icon--check list-box__input"
+									type="radio"
+									name="colorScheme"
+									value="{{ value }}"
+									checked?
+									autofocus?
+								>
+							</label>
+						</template>
+					</div>
+					<p class="setting__description">
+						{{ appearance.colorScheme.description }}
+					</p>
+				</div>
+				<div class="setting">
+					<h3 class="setting__title">
+						{{ appearance.hue.title }}
+					</h3>
+					<number-field>
+						<input
+							name="hue"
+							type="number"
+							min="0"
+							max="360"
+							placeholder="{{ appearance.hue.placeholder }}"
+							value="{{ appearance.hue.value }}"
+						>
+					</number-field>
+					<p class="setting__description">
+						{{ appearance.hue.description }}
+					</p>
+				</div>
+				<div class="setting">
+					<h3 class="setting__title">
+						{{ appearance.authorBadges.title }}
+					</h3>
+					<div class="list-box">
+						<template data-path="appearance.authorBadges.options">
+							<label class="list-box__item" tabindex="-1">
+								<span class="list-box__label">
+									{{ label }}
+								</span>
+								<input
+									class="icon icon--check list-box__input"
+									type="checkbox"
+									name="{{ name }}"
+									checked?
+								>
+							</label>
+						</template>
+					</div>
+					<p class="setting__description">
+						{{ appearance.authorBadges.description }}
+					</p>
+				</div>
+				<h2 class="heading-2">
+					{{ calculations.title }}
+				</h2>
+				<div class="setting">
+					<h3 class="setting__title">
+						{{ calculations.usBuyersPercent.title }}
+					</h3>
+					<number-field>
+						<input
+							name="usBuyersPercent"
+							type="number"
+							min="0"
+							max="100"
+							placeholder="{{ calculations.usBuyersPercent.placeholder }}"
+							value="{{ calculations.usBuyersPercent.value }}"
+						>
+					</number-field>
+					<p class="setting__description">
+						{{ calculations.usBuyersPercent.description }}
+					</p>
+				</div>
+			</main>
+		</template>
+	</body>
+</html>

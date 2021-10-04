@@ -1,0 +1,46 @@
+.list-box {
+	background-color: var(--backgroundColor1);
+	border: .125rem solid var(--backgroundColor2);
+	border-radius: .5rem;
+	display: flex;
+	flex-flow: column;
+}
+
+.list-box:focus-within {
+	border-color: var(--blue3);
+}
+
+.list-box__item {
+	align-items: center;
+	background-color: inherit;
+	border-radius: inherit;
+	display: flex;
+	height: 1.75rem;
+	justify-content: space-between;
+	padding: 0 .25rem 0 .5rem;
+}
+
+.list-box__item:hover {
+	filter: var(--brightness1);
+}
+
+.list-box__item:active {
+	filter: var(--brightness2);
+}
+
+.list-box__label {
+	font-size: var(--fontSize3);
+	line-height: 1rem;
+}
+
+.list-box__input {
+	appearance: none;
+	margin: 0;
+	transform: scale(0);
+}
+
+.list-box__input:checked {
+	transform: scale(1);
+}
+
+
