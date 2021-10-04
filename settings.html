@@ -51,9 +51,6 @@
 					<div class="list-box">
 						<template data-path="appearance.colorScheme.options">
 							<label class="list-box__item" tabindex="-1">
-								<span class="list-box__label">
-									{{ label }}
-								</span>
 								<input
 									class="icon icon--check list-box__input"
 									type="radio"
@@ -62,6 +59,9 @@
 									checked?
 									autofocus?
 								>
+								<span class="list-box__label">
+									{{ label }}
+								</span>
 							</label>
 						</template>
 					</div>
@@ -94,15 +94,15 @@
 					<div class="list-box">
 						<template data-path="appearance.authorBadges.options">
 							<label class="list-box__item" tabindex="-1">
-								<span class="list-box__label">
-									{{ label }}
-								</span>
 								<input
 									class="icon icon--check list-box__input"
 									type="checkbox"
 									name="{{ name }}"
 									checked?
 								>
+								<span class="list-box__label">
+									{{ label }}
+								</span>
 							</label>
 						</template>
 					</div>
