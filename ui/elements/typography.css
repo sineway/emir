@@ -22,30 +22,17 @@
 }
 
 .anchor {
+	background: linear-gradient(var(--blue3), var(--blue3)) no-repeat 0 100%;
+	background-size: 0 .125rem;
 	color: var(--color1);
-	position: relative;
 	text-decoration: none;
+	transition: background-size var(--duration1),
+			    background-position var(--duration1) var(--duration1);
 }
 
-.anchor::after {
-	background-color: var(--blue3);
-	bottom: -.125rem;
-	content: "";
-	height: .125rem;
-	left: 0;
-	position: absolute;
-	transform: scaleX(0);
-	transform-origin: right;
-	transition: transform var(--duration1);
-	width: 100%;
-}
-
-.anchor:hover::after,
-.anchor:focus-visible::after {
-	transform: scaleX(1);
-	transform-origin: left;
-}
-
+.anchor:hover,
 .anchor:focus-visible {
+	background-position: 100% 100%;
+	background-size: 100% .125rem;
 	outline: none;
 }
