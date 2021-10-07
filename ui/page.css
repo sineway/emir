@@ -28,34 +28,33 @@
 	--brightness2: brightness(1.2);
 }
 
+@keyframes zoomInFadeOut {
+	0% {
+		opacity: 1;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1);
+	}
+}
+
 .page--loading::before,
 .page--loading::after {
+	animation: zoomInFadeOut var(--duration2) ease-out infinite both;
+	background-color: var(--color2);
 	border-radius: 50%;
 	content: "";
-	height: 1rem;
-	left: 50%;
+	height: var(--size);
+	left: calc(50% - var(--size) / 2);
 	position: fixed;
-	top: 50%;
-	width: 1rem;
-}
-
-@keyframes loading {
-	from {
-		transform: translate(-125%, -50%);
-	}
-	to {
-		transform: translate(125%, -50%);
-	}
-}
-
-.page--loading::before {
-	animation: loading var(--duration2) ease-in-out infinite alternate;
-	background-color: var(--red1);
+	top: calc(50% - var(--size) / 2);
+	width: var(--size);
+	--size: 2rem;
 }
 
 .page--loading::after {
-	animation: loading var(--duration2) ease-in-out infinite alternate-reverse;
-	background-color: var(--blue3);
+	animation-delay: calc(var(--duration2) / 2);
 }
 
 .page__body {
