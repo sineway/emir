@@ -25,3 +25,12 @@ browser.contextMenus.onClicked.addListener(async info => {
 		height: Math.round(settings.baseHeight * devicePixelRatio)
 	})
 })
+
+browser.runtime.onInstalled.addListener(async () => {
+	let info = await browser.management.getSelf()
+	if (info.installType == "development") {
+		browser.tabs.create({
+			url: "/bookmarks.html"
+		})
+	}
+})
