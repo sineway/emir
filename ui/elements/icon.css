@@ -14,21 +14,21 @@
 }
 
 .icon--add {
-	--image: url("/ui/resources/icons/add.svg");
+	--image: url("/ui/resources/icons/svg/add.svg");
 }
 
 .icon--arrow-back {
-	--image: url("/ui/resources/icons/arrow-back.svg");
+	--image: url("/ui/resources/icons/svg/arrow-back.svg");
 }
 
 .icon--check {
-	--image: url("/ui/resources/icons/check.svg");
+	--image: url("/ui/resources/icons/svg/check.svg");
 }
 
 .icon--remove {
-	--image: url("/ui/resources/icons/remove.svg");
+	--image: url("/ui/resources/icons/svg/remove.svg");
 }
 
 .icon--tune {
-	--image: url("/ui/resources/icons/tune.svg");
+	--image: url("/ui/resources/icons/svg/tune.svg");
 }
