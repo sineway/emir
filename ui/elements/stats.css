@@ -11,20 +11,20 @@
 	flex-flow: column;
 }
 
-.stats__item-value {
+.stats__value {
 	font-size: var(--fontSize4);
 	font-weight: var(--fontWeight2);
 	line-height: 1;
 }
 
-.stats__item-label {
+.stats__label {
 	align-items: center;
 	display: flex;
 	gap: .5rem;
 	height: 1.5rem;
 }
 
-.stats__item-label::before {
+.stats__label::before {
 	background-color: var(--backgroundColor2);
 	border-radius: .125rem;
 	content: "";
