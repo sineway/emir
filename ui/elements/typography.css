@@ -22,17 +22,16 @@
 }
 
 .anchor {
-	background: linear-gradient(var(--blue3), var(--blue3)) no-repeat 0 100%;
+	background: linear-gradient(var(--blue3), var(--blue3)) no-repeat 100% 100%;
 	background-size: 0 .125rem;
 	color: var(--color1);
 	text-decoration: none;
-	transition: background-size var(--duration1),
-			    background-position var(--duration1) var(--duration1);
+	transition: background-size var(--duration1);
 }
 
 .anchor:hover,
 .anchor:focus-visible {
-	background-position: 100% 100%;
+	background-position: 0 100%;
 	background-size: 100% .125rem;
 	outline: none;
 }
