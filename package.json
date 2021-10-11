@@ -1,8 +1,8 @@
 {
-    "devDependencies": {
-        "jasmine-core": "^3.7.1"
-    },
-    "dependencies": {
-        "webextension-polyfill": "^0.8.0"
-    }
+	"devDependencies": {
+		"jasmine-core": "^3.7.1"
+	},
+	"dependencies": {
+		"webextension-polyfill": "^0.8.0"
+	}
 }
