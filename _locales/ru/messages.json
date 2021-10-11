@@ -3,16 +3,16 @@
 		"message": "ЭМИР | EMIR | Envato Market Item Revenue"
 	},
 	"description": {
-		"message": "Узнавайте какую выручку приноситят товары на рынке Envato"
+		"message": "Узнавайте какую выручку приносят товары на рынке Envato"
 	},
 	"context_menu": {
-		"message": "Оценка в&ыручки…"
+		"message": "Прикинуть в&ыручку…"
 	},
 	"loading": {
 		"message": "Загрузка…"
 	},
 	"estimates": {
-		"message": "Оценка выручки"
+		"message": "Показатели"
 	},
 	"estimates__summary": {
 		"message": "Cводка"
