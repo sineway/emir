@@ -17,7 +17,7 @@ export class Market {
 	/**
 		@param {Number} itemId
 		@param {Object=} options
-		@returns {Promise<ItemEstimate>}
+		@returns {Promise<Object>}
 	*/
 	async estimateItem(itemId, options = {}) {
 		let item = await this.gateway.getCatalogItem(itemId)
@@ -34,16 +34,11 @@ export class Market {
 			options
 		)
 		let parsedPopular = this.parser.parsePopular(popular, itemId)
-		/**
-			@typedef {ItemEstimate}
-			@prop {String} name
-			@prop {Array<EarningsCalculator>} records
-		*/
 		return {
-			name: item.name,
+			item,
 			...user,
 			...badges,
-			records: [{
+			estimates: [{
 				...dataForAllTime,
 				period: TimeUnit.WEEK,
 				sales: parsedPopular.salesForWeek

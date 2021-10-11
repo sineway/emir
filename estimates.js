@@ -10,11 +10,11 @@ browser.storage.local.get(defaults).then(async settings => {
 	let page = new Page(settings)
 
 	await page.render(async () => {
-		let estimate = await market.estimateItem(url.searchParams.get("id"), {
+		let data = await market.estimateItem(url.searchParams.get("id"), {
 			usBuyersRatio: settings.usBuyersPercent / 100
 		})
 		return {
-			title: estimate.name,
+			title: data.item.name,
 			header: {
 				title: browser.i18n.getMessage("estimates"),
 				navButton: {
@@ -31,11 +31,11 @@ browser.storage.local.get(defaults).then(async settings => {
 						.replace(/[A-Z]/g, "_$&")
 						.toLowerCase()
 				}).map(key => {
-					return estimate["user-badges"]
+					return data["user-badges"]
 						.find(badge => badge.name.startsWith(key))
 				}).filter(badge => badge)
 			},
-			records: estimate.records.map((item, index) => ({
+			estimates: data.estimates.map((item, index) => ({
 				count: index + 1,
 				period: item.period,
 				summary: {
