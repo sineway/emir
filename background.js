@@ -17,7 +17,7 @@ browser.runtime.onInstalled.addListener(() => {
 
 browser.contextMenus.onClicked.addListener(async info => {
 	let [path, id] = info.linkUrl.match(/\/item(?:\/[\w-]+)+\/(\d+)/)
-	let settings = await browser.storage.local.get()
+	let settings = await browser.storage.local.get((await import("/defaults.js")).default)
 	browser.windows.create({
 		type: "popup",
 		url: `/estimates.html?${ new URLSearchParams({ id }) }`,
