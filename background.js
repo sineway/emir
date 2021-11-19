@@ -1,4 +1,4 @@
-browser.runtime.onInstalled.addListener(() => {
+browser.contextMenus.removeAll().then(() => {
 	browser.contextMenus.create({
 		title: browser.i18n.getMessage("context_menu"),
 		id: "link",
