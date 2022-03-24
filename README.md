@@ -5,4 +5,4 @@
 
 **License**
 
-Copyright 2021 [Sineway](https://github.com/sineway)
+Copyright [Sineway](https://github.com/sineway)
