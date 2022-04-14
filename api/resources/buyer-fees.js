@@ -8,6 +8,7 @@ export default {
 	"themeforest/forums": 4,
 	"themeforest/muse-templates": 4,
 	"themeforest/static-site-generators": 4,
+	"themeforest/jamstack": 4,
 	"themeforest/courses": 1,
 	"themeforest/template-kits": 5,
 	"themeforest/ui-templates": 2,
