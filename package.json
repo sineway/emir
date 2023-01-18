@@ -1,11 +1,8 @@
 {
 	"devDependencies": {
-		"jasmine-core": "^3.7.1"
+		"jasmine-core": "3.7.1"
 	},
-	"dependencies": {
-		"webextension-polyfill": "^0.8.0"
-	},
-	 "scripts": {
-		"build": "zip 'dist' --filesync --recurse-paths './' --include '_locales/*' 'api/*' 'node_modules/webextension-polyfill/*' 'ui/*' 'background.*' 'defaults.js' 'estimates.*' 'manifest.json' 'settings.*' --exclude 'api/test/*'"
+	"scripts": {
+		"build": "zip 'dist' --filesync --recurse-paths './' --include '_locales/*' 'api/*' 'ui/*' 'background.*' 'defaults.js' 'estimates.*' 'manifest.json' 'settings.*' --exclude 'api/test/*'"
 	}
 }

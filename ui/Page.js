@@ -1,9 +1,9 @@
 import PageTemplate from "./PageTemplate.js"
 import TimeUnit from "/api/TimeUnit.js"
 
-let languageCode = browser.i18n.getUILanguage()
-browser.i18n.detectLanguage(
-	browser.i18n.getMessage("settings__hue") // gives the most accurate result
+let languageCode = chrome.i18n.getUILanguage()
+chrome.i18n.detectLanguage(
+	chrome.i18n.getMessage("settings__hue") // gives the most accurate result
 ).then(result => {
 	languageCode = result.languages[0].language
 })
@@ -30,7 +30,7 @@ export class Page {
 		*/
 		this.setHue(options.hue ?? 0)
 
-		browser.storage.onChanged.addListener((changes, area) => {
+		chrome.storage.onChanged.addListener((changes, area) => {
 			if (area == "local") {
 				if (changes.colorScheme) {
 					this.setColorScheme(changes.colorScheme.newValue)
@@ -44,7 +44,7 @@ export class Page {
 		addEventListener("click", event => {
 			if (event.target.matches(`a[href^="http"]`)) {
 				event.preventDefault()
-				browser.tabs.create({ url: event.target.href })
+				chrome.tabs.create({ url: event.target.href })
 			}
 		})
 	}
@@ -66,9 +66,9 @@ export class Page {
 		@returns {Promise}
 	*/
 	async resize() {
-		let currentWindow = await browser.windows.getCurrent()
+		let currentWindow = await chrome.windows.getCurrent()
 		if (currentWindow.type == "popup") {
-			await browser.windows.update(currentWindow.id, {
+			await chrome.windows.update(currentWindow.id, {
 				width: Math.round(this.baseWidth * devicePixelRatio),
 				height: Math.round(this.baseHeight * devicePixelRatio)
 			})
@@ -121,7 +121,7 @@ export class Page {
 	async render(callback) {
 		let data = {}
 		try {
-			document.title = browser.i18n.getMessage("loading")
+			document.title = chrome.i18n.getMessage("loading")
 			document.documentElement.classList.add("page--loading")
 			data.page = await callback()
 		}
@@ -129,12 +129,12 @@ export class Page {
 			console.error(error)
 			let errorCode = error.response?.status ?? ""
 			data.error = {
-				title: browser.i18n.getMessage("error", [errorCode]),
+				title: chrome.i18n.getMessage("error", [errorCode]),
 				description: error.message
 			}
 			if (errorCode == 429) {
 				let seconds = error.response.headers.get("retry-after")
-				data.error.description = browser.i18n.getMessage("error_429", [
+				data.error.description = chrome.i18n.getMessage("error_429", [
 					this.template.formats.duration(seconds * 1000)
 				])
 			}

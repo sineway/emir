@@ -1,6 +1,5 @@
 # npm install
-node_modules/*
-!node_modules/webextension-polyfill
+node_modules/
 
 # npm run build
 *.zip

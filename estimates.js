@@ -6,7 +6,7 @@ import TimeUnit from "/api/TimeUnit.js"
 let url = new URL(location)
 let market = new Market
 
-browser.storage.local.get(defaults).then(async settings => {
+chrome.storage.local.get(defaults).then(async settings => {
 	let page = new Page(settings)
 
 	await page.render(async () => {
@@ -16,12 +16,12 @@ browser.storage.local.get(defaults).then(async settings => {
 		return {
 			title: data.item.name,
 			header: {
-				title: browser.i18n.getMessage("estimates"),
+				title: chrome.i18n.getMessage("estimates"),
 				navButton: {
 					url: `/settings.html?${ new URLSearchParams({
 						return: `${ url }`.replace(url.origin, "")
 					}) }`,
-					label: browser.i18n.getMessage("settings")
+					label: chrome.i18n.getMessage("settings")
 				},
 				authorBadges: Object.keys(defaults).filter(key => {
 					return key.endsWith("Badge") && settings[key]
@@ -39,37 +39,37 @@ browser.storage.local.get(defaults).then(async settings => {
 				count: index + 1,
 				period: item.period,
 				summary: {
-					title: browser.i18n.getMessage("estimates__summary"),
+					title: chrome.i18n.getMessage("estimates__summary"),
 					items: ["sales", "revenue", "earnings"].map((name, index) => {
 						let value = item[`${ name }For`](item.period)
 						let format = page.template.formats[name == "sales" ? "number" : "currency"]
 						return {
 							value,
 							valueFormatted: format(value),
-							label: browser.i18n.getMessage("estimates__summary_items").split("\\")[index]
+							label: chrome.i18n.getMessage("estimates__summary_items").split("\\")[index]
 						}
 					})
 				},
 				revenueChart: {
-					title: browser.i18n.getMessage("estimates__revenue_chart"),
+					title: chrome.i18n.getMessage("estimates__revenue_chart"),
 					items: ["buyerFee", "usTax", "authorFee", "earnings"].map((key, index) => {
 						let value = item[key]
 						return {
-							label: browser.i18n.getMessage("estimates__revenue_chart_items").split("\\")[index],
+							label: chrome.i18n.getMessage("estimates__revenue_chart_items").split("\\")[index],
 							value: value * item.sales,
 							ratio: value / item.listPrice
 						}
 					})
 				},
 				average: {
-					title: browser.i18n.getMessage("estimates__average"),
-					columns: browser.i18n.getMessage("estimates__average_columns").split("\\").map(name => {
+					title: chrome.i18n.getMessage("estimates__average"),
+					columns: chrome.i18n.getMessage("estimates__average_columns").split("\\").map(name => {
 						return { name }
 					}),
 					rows: ["Hour", "Day", "Week", "Month", "Year"].map((key, index) => {
 						let period = TimeUnit[key.toUpperCase()]
 						return {
-							period: browser.i18n.getMessage("estimates__average_rows").split("\\")[index],
+							period: chrome.i18n.getMessage("estimates__average_rows").split("\\")[index],
 							sales: item.salesFor(period),
 							revenue: item.revenueFor(period),
 							earnings: item.earningsFor(period)
@@ -77,7 +77,7 @@ browser.storage.local.get(defaults).then(async settings => {
 					})
 				}
 			})),
-			poweredBy: browser.i18n.getMessage("powered_by")
+			poweredBy: chrome.i18n.getMessage("powered_by")
 		}
 	})
 	addEventListener("hashchange", () => {
