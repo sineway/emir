@@ -1,7 +1,6 @@
-import defaults from '/defaults.js';
 import Page from '/ui/Page.js';
 
-chrome.storage.local.get(defaults).then(async (settings) => {
+chrome.storage.local.get().then(async (settings) => {
     let page = new Page(settings);
 
     await page.render(() => {
@@ -35,7 +34,7 @@ chrome.storage.local.get(defaults).then(async (settings) => {
                     return {
                         title,
                         description,
-                        placeholder: defaults.hue,
+                        placeholder: settings.hue,
                         value: settings.hue,
                     };
                 })(),
@@ -43,7 +42,7 @@ chrome.storage.local.get(defaults).then(async (settings) => {
                     let [title, description, ...rest] = chrome.i18n
                         .getMessage('settings__author_badges')
                         .split('\\');
-                    let options = Object.keys(defaults)
+                    let options = Object.keys(settings)
                         .filter((key) => key.endsWith('Badge'))
                         .map((name, index) => ({
                             label: rest[index],
@@ -62,7 +61,7 @@ chrome.storage.local.get(defaults).then(async (settings) => {
                     return {
                         title,
                         description,
-                        placeholder: defaults.usBuyersPercent,
+                        placeholder: settings.usBuyersPercent,
                         value: settings.usBuyersPercent,
                     };
                 })(),
@@ -72,7 +71,7 @@ chrome.storage.local.get(defaults).then(async (settings) => {
     addEventListener('input', ({target}) => {
         if (target.value == '') {
             chrome.storage.local.set({
-                [target.name]: defaults[target.name],
+                [target.name]: settings[target.name],
             });
         } else if (target.checkValidity?.()) {
             let key = 'value';

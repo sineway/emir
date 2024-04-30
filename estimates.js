@@ -1,4 +1,3 @@
-import defaults from '/defaults.js';
 import Page from '/ui/Page.js';
 import Market from '/api/Market.js';
 import TimeUnit from '/api/TimeUnit.js';
@@ -6,7 +5,7 @@ import TimeUnit from '/api/TimeUnit.js';
 let url = new URL(location);
 let market = new Market();
 
-chrome.storage.local.get(defaults).then(async (settings) => {
+chrome.storage.local.get().then(async (settings) => {
     let page = new Page(settings);
 
     await page.render(async () => {
@@ -23,7 +22,7 @@ chrome.storage.local.get(defaults).then(async (settings) => {
                     })}`,
                     label: chrome.i18n.getMessage('settings'),
                 },
-                authorBadges: Object.keys(defaults)
+                authorBadges: Object.keys(settings)
                     .filter((key) => {
                         return key.endsWith('Badge') && settings[key];
                     })

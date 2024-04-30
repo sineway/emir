@@ -1,4 +1,16 @@
-import defaults from '/defaults.js';
+chrome.storage.local
+    .get({
+        baseWidth: 384,
+        baseHeight: 612,
+        colorScheme: 'light',
+        hue: 45,
+        countryBadge: true,
+        authorLevelBadge: false,
+        usBuyersPercent: 40,
+    })
+    .then((settings) => {
+        chrome.storage.local.set(settings);
+    });
 
 chrome.contextMenus.removeAll();
 chrome.contextMenus.create({
@@ -18,7 +30,7 @@ chrome.contextMenus.create({
 
 chrome.contextMenus.onClicked.addListener(async (info) => {
     let [path, id] = info.linkUrl.match(/\/item(?:\/[\w-]+)+\/(\d+)/);
-    let settings = await chrome.storage.local.get(defaults);
+    let settings = await chrome.storage.local.get();
     chrome.windows.create({
         type: 'popup',
         url: `/estimates.html?${new URLSearchParams({id})}`,
