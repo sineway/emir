@@ -1,49 +1,49 @@
 .list-box {
-	background-color: var(--backgroundColor1);
-	border: .125rem solid var(--backgroundColor2);
-	border-radius: .5rem;
-	display: flex;
-	flex-flow: column;
-	overflow: hidden;
+    background-color: var(--backgroundColor1);
+    border: 0.125rem solid var(--backgroundColor2);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
 }
 
 .list-box:focus-within {
-	border-color: var(--blue3);
+    border-color: var(--blue3);
 }
 
 .list-box__item {
-	align-items: center;
-	display: flex;
-	position: relative;
+    align-items: center;
+    display: flex;
+    position: relative;
 }
 
 .list-box__input {
-	appearance: none;
-	margin: 0;
-	pointer-events: none;
-	position: absolute;
-	right: .25rem;
-	transform: scale(0);
-	z-index: 1;
+    appearance: none;
+    margin: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0.25rem;
+    transform: scale(0);
+    z-index: 1;
 }
 
 .list-box__input:checked {
-	transform: scale(1);
+    transform: scale(1);
 }
 
 .list-box__label {
-	background-color: var(--backgroundColor1);
-	font-size: var(--fontSize3);
-	line-height: 1.75rem;
-	padding: 0 .5rem;
-	width: 100%;
+    background-color: var(--backgroundColor1);
+    font-size: var(--fontSize3);
+    line-height: 1.75rem;
+    padding: 0 0.5rem;
+    width: 100%;
 }
 
 .list-box__label:hover,
 :focus-visible + .list-box__label {
-	filter: var(--brightness1);
+    filter: var(--brightness1);
 }
 
 .list-box__label:active {
-	filter: var(--brightness2);
+    filter: var(--brightness2);
 }

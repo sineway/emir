@@ -1,71 +1,71 @@
 {
-	"name": {
-		"message": "EMIR | Envato Market Item Revenue"
-	},
-	"description": {
-		"message": "View estimated item revenue on Envato Market"
-	},
-	"context_menu": {
-		"message": "Estimate &revenue…"
-	},
-	"loading": {
-		"message": "Loading…"
-	},
-	"estimates": {
-		"message": "Estimates"
-	},
-	"estimates__summary": {
-		"message": "Summary"
-	},
-	"estimates__summary_items": {
-		"message": "Sales \\ Revenue \\ Earnings"
-	},
-	"estimates__revenue_chart": {
-		"message": "Revenue chart"
-	},
-	"estimates__revenue_chart_items": {
-		"message": "Buyer fee \\ US tax \\ Author fee \\ Earnings"
-	},
-	"estimates__average": {
-		"message": "Average"
-	},
-	"estimates__average_columns": {
-		"message": "Period \\ Sales \\ Revenue \\ Earnings"
-	},
-	"estimates__average_rows": {
-		"message": "Hour \\ Day \\ Week \\ Month \\ Year"
-	},
-	"powered_by": {
-		"message": "Powered by"
-	},
-	"go_back": {
-		"message": "Back"
-	},
-	"settings": {
-		"message": "Settings"
-	},
-	"settings__appearance": {
-		"message": "Appearance"
-	},
-	"settings__color_scheme": {
-		"message": "Color scheme \\ Adjust hue if necessary \\ Light \\ Dark"
-	},
-	"settings__hue": {
-		"message": "Hue (deg) \\ Recommended values: 45 for a light color scheme, 255 for a dark one"
-	},
-	"settings__author_badges": {
-		"message": "Author badges \\ Note: Many authors do not indicate country \\ Country \\ Level"
-	},
-	"settings__calculations": {
-		"message": "Calculations"
-	},
-	"settings__us_buyers_percent": {
-		"message": "US buyers (%) \\ Used to calculate US tax"
-	},
-	"error": {
-		"message": "Error $1"
-	},
-	"error_429": {
-		"message": "The rate limit of API calls has been exceeded. Try again in $1"
-	}
+    "name": {
+        "message": "EMIR | Envato Market Item Revenue"
+    },
+    "description": {
+        "message": "View estimated item revenue on Envato Market"
+    },
+    "context_menu": {
+        "message": "Estimate &revenue…"
+    },
+    "loading": {
+        "message": "Loading…"
+    },
+    "estimates": {
+        "message": "Estimates"
+    },
+    "estimates__summary": {
+        "message": "Summary"
+    },
+    "estimates__summary_items": {
+        "message": "Sales \\ Revenue \\ Earnings"
+    },
+    "estimates__revenue_chart": {
+        "message": "Revenue chart"
+    },
+    "estimates__revenue_chart_items": {
+        "message": "Buyer fee \\ US tax \\ Author fee \\ Earnings"
+    },
+    "estimates__average": {
+        "message": "Average"
+    },
+    "estimates__average_columns": {
+        "message": "Period \\ Sales \\ Revenue \\ Earnings"
+    },
+    "estimates__average_rows": {
+        "message": "Hour \\ Day \\ Week \\ Month \\ Year"
+    },
+    "powered_by": {
+        "message": "Powered by"
+    },
+    "go_back": {
+        "message": "Back"
+    },
+    "settings": {
+        "message": "Settings"
+    },
+    "settings__appearance": {
+        "message": "Appearance"
+    },
+    "settings__color_scheme": {
+        "message": "Color scheme \\ Adjust hue if necessary \\ Light \\ Dark"
+    },
+    "settings__hue": {
+        "message": "Hue (deg) \\ Recommended values: 45 for a light color scheme, 255 for a dark one"
+    },
+    "settings__author_badges": {
+        "message": "Author badges \\ Note: Many authors do not indicate country \\ Country \\ Level"
+    },
+    "settings__calculations": {
+        "message": "Calculations"
+    },
+    "settings__us_buyers_percent": {
+        "message": "US buyers (%) \\ Used to calculate US tax"
+    },
+    "error": {
+        "message": "Error $1"
+    },
+    "error_429": {
+        "message": "The rate limit of API calls has been exceeded. Try again in $1"
+    }
 }

@@ -1,8 +1,8 @@
 ::selection {
-	background-color: var(--blue1);
-	color: var(--dark3);
+    background-color: var(--blue1);
+    color: var(--dark3);
 }
 
 [title]:not([href]) {
-	cursor: help;
+    cursor: help;
 }

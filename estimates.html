@@ -1,172 +1,172 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="page">
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8" />
 
-		<link rel="stylesheet" href="/ui/resources/colors.css">
-		<link rel="stylesheet" href="/ui/resources/fonts.css">
+        <link rel="stylesheet" href="/ui/resources/colors.css" />
+        <link rel="stylesheet" href="/ui/resources/fonts.css" />
 
-		<link rel="stylesheet" href="/ui/elements/icon.css">
-		<link rel="stylesheet" href="/ui/elements/button.css">
-		<link rel="stylesheet" href="/ui/elements/stats.css">
-		<link rel="stylesheet" href="/ui/elements/pie-chart.css">
-		<link rel="stylesheet" href="/ui/elements/table.css">
-		<link rel="stylesheet" href="/ui/elements/tabs.css">
-		<link rel="stylesheet" href="/ui/elements/typography.css">
+        <link rel="stylesheet" href="/ui/elements/icon.css" />
+        <link rel="stylesheet" href="/ui/elements/button.css" />
+        <link rel="stylesheet" href="/ui/elements/stats.css" />
+        <link rel="stylesheet" href="/ui/elements/pie-chart.css" />
+        <link rel="stylesheet" href="/ui/elements/table.css" />
+        <link rel="stylesheet" href="/ui/elements/tabs.css" />
+        <link rel="stylesheet" href="/ui/elements/typography.css" />
 
-		<link rel="stylesheet" href="/ui/global.css">
-		<link rel="stylesheet" href="/ui/layout.css">
-		<link rel="stylesheet" href="/ui/page.css">
+        <link rel="stylesheet" href="/ui/global.css" />
+        <link rel="stylesheet" href="/ui/layout.css" />
+        <link rel="stylesheet" href="/ui/page.css" />
 
-		<script type="module" src="/estimates.js"></script>
-	</head>
-	<body class="page__body">
-		<template data-path="page">
-			<header class="header">
-				<h1 class="header__title">
-					{{ header.title }}
-				</h1>
-				<menu class="header__menu">
-					<li class="header__menu-item">
-						<a
-							class="button button--narrow"
-							href="{{ header.navButton.url }}"
-							title="{{ header.navButton.label }}"
-						>
-							<span class="icon icon--tune"></span>
-						</a>
-					</li>
-					<template data-path="header.authorBadges">
-						<li class="header__menu-item">
-							<img
-								class="icon icon--inline"
-								src="{{ image }}"
-								title="{{ label }}"
-							>
-						</li>
-					</template>
-				</menu>
-			</header>
-			<main class="tabs main">
-				<form class="tabs__list" name="tabs">
-					<template data-path="estimates">
-						<label class="tabs__item">
-							<input
-								class="tabs__input"
-								type="radio"
-								name="input"
-								value="#panel-{{ count }}"
-							>
-							<span class="button tabs__label">
-								{{ period | duration }}
-							</span>
-						</label>
-					</template>
-				</form>
-				<template data-path="estimates">
-					<article class="tabs__panel" id="panel-{{ count }}">
-						<h2 class="heading-2">
-							{{ summary.title }}
-						</h2>
-						<ul class="stats">
-							<template data-path="summary.items">
-								<li class="stats__item">
-									<span class="stats__value" title="{{ valueFormatted }}">
-										{{ value | compact }}
-									</span>
-									<span class="stats__label">
-										{{ label }}
-									</span>
-								</li>
-							</template>
-						</ul>
-						<h2 class="heading-2">
-							{{ revenueChart.title }}
-						</h2>
-						<figure class="pie-chart">
-							<div
-								class="pie-chart__image"
-								style="
+        <script type="module" src="/estimates.js"></script>
+    </head>
+    <body class="page__body">
+        <template data-path="page">
+            <header class="header">
+                <h1 class="header__title">{{ header.title }}</h1>
+                <menu class="header__menu">
+                    <li class="header__menu-item">
+                        <a
+                            class="button button--narrow"
+                            href="{{ header.navButton.url }}"
+                            title="{{ header.navButton.label }}"
+                        >
+                            <span class="icon icon--tune"></span>
+                        </a>
+                    </li>
+                    <template data-path="header.authorBadges">
+                        <li class="header__menu-item">
+                            <img
+                                class="icon icon--inline"
+                                src="{{ image }}"
+                                title="{{ label }}"
+                            />
+                        </li>
+                    </template>
+                </menu>
+            </header>
+            <main class="tabs main">
+                <form class="tabs__list" name="tabs">
+                    <template data-path="estimates">
+                        <label class="tabs__item">
+                            <input
+                                class="tabs__input"
+                                type="radio"
+                                name="input"
+                                value="#panel-{{ count }}"
+                            />
+                            <span class="button tabs__label">
+                                {{ period | duration }}
+                            </span>
+                        </label>
+                    </template>
+                </form>
+                <template data-path="estimates">
+                    <article class="tabs__panel" id="panel-{{ count }}">
+                        <h2 class="heading-2">{{ summary.title }}</h2>
+                        <ul class="stats">
+                            <template data-path="summary.items">
+                                <li class="stats__item">
+                                    <span
+                                        class="stats__value"
+                                        title="{{ valueFormatted }}"
+                                    >
+                                        {{ value | compact }}
+                                    </span>
+                                    <span class="stats__label">
+                                        {{ label }}
+                                    </span>
+                                </li>
+                            </template>
+                        </ul>
+                        <h2 class="heading-2">{{ revenueChart.title }}</h2>
+                        <figure class="pie-chart">
+                            <div
+                                class="pie-chart__image"
+                                style="
 									--relativeColorStop1: {{ revenueChart.items.0.ratio }}turn;
 									--relativeColorStop2: {{ revenueChart.items.1.ratio }}turn;
 									--relativeColorStop3: {{ revenueChart.items.2.ratio }}turn;
 									--relativeColorStop4: {{ revenueChart.items.3.ratio }}turn;
 								"
-							>
-								<div
-									class="pie-chart__total-value"
-									title="{{ summary.items.1.value | currency }} (100%)"
-								>
-									{{ summary.items.1.value | compact }}
-								</div>
-							</div>
-							<figcaption class="pie-chart__legend">
-								<template data-path="revenueChart.items">
-									<div
-										class="pie-chart__segment-label"
-										title="{{ value | currency }} ({{ ratio | percent }})"
-									>
-										{{ label }}
-										<span class="pie-chart__segment-value">
-											{{ value | compact }}
-										</span>
-									</div>
-								</template>
-							</figcaption>
-						</figure>
-						<h2 class="heading-2">
-							{{ average.title }}
-						</h2>
-						<table class="table">
-							<thead class="table__header">
-								<tr class="table__header-row">
-									<template data-path="average.columns">
-										<td class="table__header-cell">
-											{{ name }}
-										</td>
-									</template>
-								</tr>
-							</thead>
-							<tbody class="table__body">
-								<template data-path="average.rows">
-									<tr class="table__body-row">
-										<td class="table__body-cell">
-											{{ period }}
-										</td>
-										<td class="table__body-cell" title="{{ sales | number }}">
-											{{ sales | compact }}
-										</td>
-										<td class="table__body-cell" title="{{ revenue | currency }}">
-											{{ revenue | compact}}
-										</td>
-										<td class="table__body-cell" title="{{ earnings | currency }}">
-											{{ earnings | compact }}
-										</td>
-									</tr>
-								</template>
-							</tbody>
-						</table>
-					</article>
-				</template>
-			</main>
-			<footer class="footer">
-				<p>
-					{{ poweredBy }}
-					<a class="anchor" href="https://build.envato.com">
-						Envato API
-					</a>
-				</p>
-			</footer>
-		</template>
-		<template data-path="error">
-			<main class="main main--only">
-				<h1 class="heading-1">
-					{{ title }}
-				</h1>
-				<p class="paragraph">
-					{{ description }}
-				</p>
-			</main>
-		</template>
-	</body>
+                            >
+                                <div
+                                    class="pie-chart__total-value"
+                                    title="{{ summary.items.1.value | currency }} (100%)"
+                                >
+                                    {{ summary.items.1.value | compact }}
+                                </div>
+                            </div>
+                            <figcaption class="pie-chart__legend">
+                                <template data-path="revenueChart.items">
+                                    <div
+                                        class="pie-chart__segment-label"
+                                        title="{{ value | currency }} ({{ ratio | percent }})"
+                                    >
+                                        {{ label }}
+                                        <span class="pie-chart__segment-value">
+                                            {{ value | compact }}
+                                        </span>
+                                    </div>
+                                </template>
+                            </figcaption>
+                        </figure>
+                        <h2 class="heading-2">{{ average.title }}</h2>
+                        <table class="table">
+                            <thead class="table__header">
+                                <tr class="table__header-row">
+                                    <template data-path="average.columns">
+                                        <td class="table__header-cell">
+                                            {{ name }}
+                                        </td>
+                                    </template>
+                                </tr>
+                            </thead>
+                            <tbody class="table__body">
+                                <template data-path="average.rows">
+                                    <tr class="table__body-row">
+                                        <td class="table__body-cell">
+                                            {{ period }}
+                                        </td>
+                                        <td
+                                            class="table__body-cell"
+                                            title="{{ sales | number }}"
+                                        >
+                                            {{ sales | compact }}
+                                        </td>
+                                        <td
+                                            class="table__body-cell"
+                                            title="{{ revenue | currency }}"
+                                        >
+                                            {{ revenue | compact}}
+                                        </td>
+                                        <td
+                                            class="table__body-cell"
+                                            title="{{ earnings | currency }}"
+                                        >
+                                            {{ earnings | compact }}
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </article>
+                </template>
+            </main>
+            <footer class="footer">
+                <p>
+                    {{ poweredBy }}
+                    <a class="anchor" href="https://build.envato.com">
+                        Envato API
+                    </a>
+                </p>
+            </footer>
+        </template>
+        <template data-path="error">
+            <main class="main main--only">
+                <h1 class="heading-1">{{ title }}</h1>
+                <p class="paragraph">{{ description }}</p>
+            </main>
+        </template>
+    </body>
 </html>

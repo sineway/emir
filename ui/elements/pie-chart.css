@@ -1,97 +1,96 @@
 .pie-chart {
-	--colorSwatch1: var(--red2);
-	--colorSwatch2: var(--yellow3);
-	--colorSwatch3: var(--green4);
-	--colorSwatch4: var(--blue4);
-	align-items: center;
-	display: flex;
-	gap: 1.25rem;
-	margin: 0 0 1rem;
+    --colorSwatch1: var(--red2);
+    --colorSwatch2: var(--yellow3);
+    --colorSwatch3: var(--green4);
+    --colorSwatch4: var(--blue4);
+    align-items: center;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0 0 1rem;
 }
 
 .pie-chart__image {
-	--colorStop1: var(--relativeColorStop1, 0turn);
-	--colorStop2: calc(var(--relativeColorStop2, 0turn) + var(--colorStop1));
-	--colorStop3: calc(var(--relativeColorStop3, 0turn) + var(--colorStop2));
-	--colorStop4: calc(var(--relativeColorStop4, 0turn) + var(--colorStop3));
-	align-items: center;
-	background: var(--backgroundColor2) conic-gradient(
-		var(--colorSwatch1) 0 var(--colorStop1),
-		var(--colorSwatch2) 0 var(--colorStop2),
-		var(--colorSwatch3) 0 var(--colorStop3),
-		var(--colorSwatch4) 0 var(--colorStop4)
-	);
-	border-radius: 50%;
-	display: flex;
-	flex: 0 0 7rem;
-	height: 7rem;
-	justify-content: center;
+    --colorStop1: var(--relativeColorStop1, 0turn);
+    --colorStop2: calc(var(--relativeColorStop2, 0turn) + var(--colorStop1));
+    --colorStop3: calc(var(--relativeColorStop3, 0turn) + var(--colorStop2));
+    --colorStop4: calc(var(--relativeColorStop4, 0turn) + var(--colorStop3));
+    align-items: center;
+    background: var(--backgroundColor2)
+        conic-gradient(
+            var(--colorSwatch1) 0 var(--colorStop1),
+            var(--colorSwatch2) 0 var(--colorStop2),
+            var(--colorSwatch3) 0 var(--colorStop3),
+            var(--colorSwatch4) 0 var(--colorStop4)
+        );
+    border-radius: 50%;
+    display: flex;
+    flex: 0 0 7rem;
+    height: 7rem;
+    justify-content: center;
 }
 
 .pie-chart__total-value {
-	align-items: center;
-	background-color: var(--backgroundColor1);
-	border-radius: 50%;
-	display: flex;
-	height: 3rem;
-	justify-content: center;
-	width: 3rem;
+    align-items: center;
+    background-color: var(--backgroundColor1);
+    border-radius: 50%;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    width: 3rem;
 }
 
 .pie-chart__total-value[title] {
-	transition: transform var(--duration1);
+    transition: transform var(--duration1);
 }
 
 .pie-chart__total-value[title]:hover {
-	transform: scale(1.5);
+    transform: scale(1.5);
 }
 
 .pie-chart__legend {
-	flex: 1;
+    flex: 1;
 }
 
 .pie-chart__segment-label {
-	align-items: center;
-	display: flex;
-	gap: .5rem;
-	white-space: nowrap;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    white-space: nowrap;
 }
 
 .pie-chart__segment-label::before {
-	background-color: var(--backgroundColor2);
-	border-radius: .125rem;
-	content: "";
-	flex: 0 0 .5rem;
-	height: .5rem;
+    background-color: var(--backgroundColor2);
+    border-radius: 0.125rem;
+    content: '';
+    flex: 0 0 0.5rem;
+    height: 0.5rem;
 }
 
 .pie-chart__segment-label:nth-of-type(1)::before {
-	background-color: var(--colorSwatch1);
+    background-color: var(--colorSwatch1);
 }
 
 .pie-chart__segment-label:nth-of-type(2)::before {
-	background-color: var(--colorSwatch2);
+    background-color: var(--colorSwatch2);
 }
 
 .pie-chart__segment-label:nth-of-type(3)::before {
-	background-color: var(--colorSwatch3);
+    background-color: var(--colorSwatch3);
 }
 
 .pie-chart__segment-label:nth-of-type(4)::before {
-	background-color: var(--colorSwatch4);
+    background-color: var(--colorSwatch4);
 }
 
 .pie-chart__segment-value {
-	margin-left: auto;
+    margin-left: auto;
 }
 
 [title] > .pie-chart__segment-value {
-	transform-origin: 100%;
-	transition: transform var(--duration1);
+    transform-origin: 100%;
+    transition: transform var(--duration1);
 }
 
 [title]:hover > .pie-chart__segment-value {
-	transform: scale(1.5);
+    transform: scale(1.5);
 }
-
-

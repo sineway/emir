@@ -1,37 +1,37 @@
 .heading-1 {
-	font-size: var(--fontSize4);
-	font-weight: var(--fontWeight2);
-	line-height: 1.35;
-	margin: 1rem 0;
+    font-size: var(--fontSize4);
+    font-weight: var(--fontWeight2);
+    line-height: 1.35;
+    margin: 1rem 0;
 }
 
 .heading-2 {
-	color: var(--color2);
-	font-size: var(--fontSize2);
-	font-weight: var(--fontWeight2);
-	line-height: 1rem;
-	margin: 0;
-	padding: .5rem 0;
+    color: var(--color2);
+    font-size: var(--fontSize2);
+    font-weight: var(--fontWeight2);
+    line-height: 1rem;
+    margin: 0;
+    padding: 0.5rem 0;
 }
 
 .paragraph {
-	color: var(--color2);
-	font-size: var(--fontSize3);
-	line-height: 1.5;
-	margin: 1rem 0;
+    color: var(--color2);
+    font-size: var(--fontSize3);
+    line-height: 1.5;
+    margin: 1rem 0;
 }
 
 .anchor {
-	background: linear-gradient(var(--blue3), var(--blue3)) no-repeat 100% 100%;
-	background-size: 0 .125rem;
-	color: var(--color1);
-	text-decoration: none;
-	transition: background-size var(--duration1);
+    background: linear-gradient(var(--blue3), var(--blue3)) no-repeat 100% 100%;
+    background-size: 0 0.125rem;
+    color: var(--color1);
+    text-decoration: none;
+    transition: background-size var(--duration1);
 }
 
 .anchor:hover,
 .anchor:focus-visible {
-	background-position: 0 100%;
-	background-size: 100% .125rem;
-	outline: none;
+    background-position: 0 100%;
+    background-size: 100% 0.125rem;
+    outline: none;
 }

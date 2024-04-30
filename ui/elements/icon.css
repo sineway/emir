@@ -1,34 +1,34 @@
 .icon {
-	--size: 1.5rem;
-	background-color: var(--color1);
-	display: inline-block;
-	height: var(--size);
-	-webkit-mask: var(--image) no-repeat center;
-	-webkit-mask-size: var(--size);
-	vertical-align: middle;
-	width: var(--size);
+    --size: 1.5rem;
+    background-color: var(--color1);
+    display: inline-block;
+    height: var(--size);
+    -webkit-mask: var(--image) no-repeat center;
+    -webkit-mask-size: var(--size);
+    vertical-align: middle;
+    width: var(--size);
 }
 
 .icon--inline {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 .icon--add {
-	--image: url("/ui/resources/icons/svg/add.svg");
+    --image: url('/ui/resources/icons/svg/add.svg');
 }
 
 .icon--arrow-back {
-	--image: url("/ui/resources/icons/svg/arrow-back.svg");
+    --image: url('/ui/resources/icons/svg/arrow-back.svg');
 }
 
 .icon--check {
-	--image: url("/ui/resources/icons/svg/check.svg");
+    --image: url('/ui/resources/icons/svg/check.svg');
 }
 
 .icon--remove {
-	--image: url("/ui/resources/icons/svg/remove.svg");
+    --image: url('/ui/resources/icons/svg/remove.svg');
 }
 
 .icon--tune {
-	--image: url("/ui/resources/icons/svg/tune.svg");
+    --image: url('/ui/resources/icons/svg/tune.svg');
 }
