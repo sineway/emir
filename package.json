@@ -1,8 +1,12 @@
 {
-	"devDependencies": {
-		"jasmine-core": "3.7.1"
-	},
-	"scripts": {
-		"build": "zip 'dist' --filesync --recurse-paths './' --include '_locales/*' 'api/*' 'ui/*' 'background.*' 'defaults.js' 'estimates.*' 'manifest.json' 'settings.*' --exclude 'api/test/*'"
-	}
+    "devDependencies": {
+        "jasmine-core": "3.7.1",
+        "prettier": "3.1.1",
+        "prettier-plugin-css-order": "2.0.1",
+        "prettier-plugin-jsdoc": "1.3.0"
+    },
+    "scripts": {
+        "style": "prettier . --check",
+        "build": "zip 'dist' --filesync --recurse-paths './' --include '_locales/*' 'api/*' 'ui/*' 'background.*' 'defaults.js' 'estimates.*' 'manifest.json' 'settings.*' --exclude 'api/test/*'"
+    }
 }
