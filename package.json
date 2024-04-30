@@ -7,6 +7,6 @@
     },
     "scripts": {
         "style": "prettier . --check",
-        "build": "zip 'dist' --filesync --recurse-paths './' --include '_locales/*' 'api/*' 'ui/*' 'background.*' 'defaults.js' 'estimates.*' 'manifest.json' 'settings.*' --exclude 'api/test/*'"
+        "build": "zip 'dist' --filesync --recurse-paths './' --include '_locales/*' 'api/*' 'ui/*' 'background.*' 'estimates.*' 'manifest.json' 'settings.*' --exclude 'api/test/*'"
     }
 }
