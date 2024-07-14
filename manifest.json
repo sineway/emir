@@ -20,15 +20,8 @@
     "permissions": ["contextMenus", "storage"],
 
     "background": {
-        "service_worker": "/background.js",
-        "scripts": ["background.js"]
+        "service_worker": "/background.js"
     },
 
-    "minimum_chrome_version": "88.0",
-
-    "browser_specific_settings": {
-        "gecko": {
-            "strict_min_version": "109.0"
-        }
-    }
+    "minimum_chrome_version": "88.0"
 }
